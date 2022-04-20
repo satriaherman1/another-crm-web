@@ -1,5 +1,16 @@
 export default function Button(props: ICrmButton) {
-  const { variant, children } = props;
+  const { variant, children, className } = props;
 
-  return <button className={`bg-crm-primary px-20 py-8 rounded-md crm-button`}>{children}</button>;
+  let crmVariantBtnClass;
+
+  switch (variant) {
+    case "primary":
+      crmVariantBtnClass = "bg-crm-primary text-crm-dark-400";
+      break;
+    case "secondary":
+      crmVariantBtnClass = "bg-crm-secondary";
+      break;
+  }
+
+  return <button className={`${crmVariantBtnClass} ${className ?? ""} px-6 py-4 rounded-lg font-semibold crm-button`}>{children}</button>;
 }
