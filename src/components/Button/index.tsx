@@ -12,5 +12,5 @@ export default function Button(props: ICrmButton) {
       break;
   }
 
-  return <button className={`${crmVariantBtnClass} ${className ?? ""} px-6 py-4 rounded-lg font-semibold crm-button`}>{children}</button>;
+  return <button className={`${crmVariantBtnClass} ${className ?? ""} px-6 py-4 rounded-lg font-semibold crm-button max-w-[500px]`}>{children}</button>;
 }

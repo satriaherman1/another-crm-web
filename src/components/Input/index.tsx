@@ -14,5 +14,5 @@ export default function Input(props: ICrmInput) {
       break;
   }
 
-  return <input type={type} placeholder={placeholder ?? ""} className={`${crmTypeClass} crm-input mt-3`} />;
+  return <input type={type} placeholder={placeholder ?? ""} className={`${crmTypeClass} crm-input mt-3 max-w-[500px]`} />;
 }
