@@ -1,0 +1,12 @@
+@import "./utility/styles/font.scss";
+
+body {
+  margin: 0;
+  font-family: "Axiforma", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
