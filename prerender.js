@@ -23,7 +23,7 @@ const routesToPrerender = fs.readdirSync(toAbsolute("src/pages")).map((file) => 
 
     const html = template.replace(`<!--app-html-->`, appHtml);
 
-    const filePath = `dist/static${url === "/" ? "/index" : url}.html`;
+    const filePath = `/${url === "/" ? "/index" : url}.html`;
     fs.writeFileSync(toAbsolute(filePath), html);
     console.log("pre-rendered:", filePath);
   }
