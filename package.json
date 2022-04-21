@@ -3,9 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "node server",
     "build:client": "tsc && vite build --outDir dist/client",
-    "build:server": "tsc && vite build --outDir dist/server --ssr src/entry-server.js ",
+    "build:server": "tsc && vite build --outDir dist/server --ssr entry-server.js ",
+    "build": "npm run build:client && npm run build:server",
     "preview": "vite preview"
   },
   "dependencies": {

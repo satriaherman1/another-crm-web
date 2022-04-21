@@ -52,13 +52,13 @@ async function createServer(root = process.cwd(), isProd = process.env.NODE_ENV 
         // always read fresh template in dev
         template = fs.readFileSync(resolve("index.html"), "utf-8");
         template = await vite.transformIndexHtml(url, template);
-        render = (await vite.ssrLoadModule("/src/entry-server.jsx")).render;
+        render = (await vite.ssrLoadModule("/src/entry-server.tsx")).render;
       } else {
         template = indexProd;
-        render = require("./dist/server/entry-server.js").render;
+        render = require("./dist/server/server.js").render;
       }
 
-      const context: any = {};
+      const context = {};
       const appHtml = render(url, context);
 
       if (context.url) {
