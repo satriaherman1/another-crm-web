@@ -1,12 +1,12 @@
 // Pre-render the app into static HTML.
 // run `yarn generate` and then `dist/static` can be served as a static site.
 
-// const fs = require('fs')
-// const path = require('path')
+const fs = require("fs");
+const path = require("path");
 
 const toAbsolute = (p) => path.resolve(__dirname, p);
 
-const template = fs.readFileSync(toAbsolute("dist/static/index.html"), "utf-8");
+const template = fs.readFileSync(toAbsolute("dist/index.html"), "utf-8");
 const { render } = require("./dist/server/entry-server.js");
 
 // determine routes to pre-render from src/pages
