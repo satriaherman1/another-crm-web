@@ -4,7 +4,7 @@ import Button from "@src/components/Button";
 import Checkbox from "@src/components/Checkbox";
 import AuthLayout from "@src/layout/auth-layout";
 
-export default function SignIn() {
+export default function SignUp() {
   return (
     <AuthLayout>
       <h2 className="text-[36px] mt-9 md:mt-0 font-semibold text-white leading-[120%]">Welcome to Another Crm</h2>

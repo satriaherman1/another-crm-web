@@ -1,11 +1,8 @@
 import "virtual:windi.css";
-import SignIn from "./pages/sign-in";
+import AppRouter from "./app-router";
+
 function App() {
-  return (
-    <>
-      <SignIn />
-    </>
-  );
+  return <AppRouter />;
 }
 
 export default App;

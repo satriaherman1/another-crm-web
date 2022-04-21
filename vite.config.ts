@@ -8,5 +8,4 @@ export default defineConfig({
   resolve: {
     alias: [{ find: "@src", replacement: path.resolve(__dirname, "/src") }],
   },
-  base: "/another-crm-web/",
 });

@@ -1,15 +1,16 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import SignIn from "pages/sign-in";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/home";
+import SignUpPage from "./pages/sign-up";
 
-const SignInPage = React.lazy(() => import("pages/sign-in"));
+const SignInPage = React.lazy(() => import("./pages/sign-in"));
 
 export default function AppRouter() {
   return (
-    <Router>
-      <Routes>
-        <Route path="sign-in" element={<SignInPage />}></Route>
-      </Routes>
-    </Router>
+    <Routes>
+      <Route path="/" caseSensitive element={<HomePage />}></Route>
+      <Route path="sign-in" element={<SignInPage />}></Route>
+      <Route path="sign-up" element={<SignUpPage />}></Route>
+    </Routes>
   );
 }
