@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "node server",
+    "dev": "vite",
     "build:client": "tsc && vite build --outDir dist/",
     "build:server": "tsc && vite build --outDir dist/server --ssr src/server/entry-server.js ",
     "build": "npm run build:client && npm run build:server ",
