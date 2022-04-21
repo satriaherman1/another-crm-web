@@ -16,6 +16,8 @@ export default function Input(props: ICrmInput) {
 
   const inputStyles = {
     background: `url(${icon})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "3% 47%",
   };
 
   return <input style={inputStyles} type={type} placeholder={placeholder ?? ""} className={`${crmTypeClass} crm-input mt-3 max-w-[500px]`} />;

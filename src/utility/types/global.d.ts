@@ -9,4 +9,5 @@ declare interface ICrmButton {
   type?: "button" | "submit";
   className?: string;
   children: any;
+  onClick?: (val?: any) => any;
 }
