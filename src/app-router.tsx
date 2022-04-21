@@ -1,10 +1,10 @@
 import React, { Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/home";
-import SignUpPage from "./pages/sign-up";
 
 const SignInPage = React.lazy(() => import("./pages/sign-in"));
+const SignUpPage = React.lazy(() => import("./pages/sign-up"));
 const VerificationPage = React.lazy(() => import("./pages/verification"));
+const HomePage = React.lazy(() => import("./pages/home"));
 
 export default function AppRouter() {
   return (
