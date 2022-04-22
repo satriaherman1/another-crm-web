@@ -3,7 +3,7 @@ import { StarIcon } from "@src/config/pathImage";
 
 export default function DashboardHeader() {
   return (
-    <div className="dashboard-head-layout  bg-crm-dark-300 flex items-center py-7 px-6 mt-4 mr-5 rounded text-white">
+    <div className="dashboard-head-layout  bg-crm-dark-300 flex items-center py-7 px-6 mt-4  rounded text-white">
       <h1 className="font-semibold text-[24px] w-[fit-content]">Dashboard</h1>
       <div className="divider h-[30px] w-[2px] bg-gray-700 mx-3"></div>
       <p>Trial Days Left :8 </p>
