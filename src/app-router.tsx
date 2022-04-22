@@ -1,11 +1,12 @@
 import React, { Suspense } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 const HomePage = React.lazy(() => import("./pages/home"));
 const SignInPage = React.lazy(() => import("./pages/sign-in"));
 const SignUpPage = React.lazy(() => import("./pages/sign-up"));
 const VerificationPage = React.lazy(() => import("./pages/verification"));
 const InvitePage = React.lazy(() => import("./pages/invite"));
+const DashboardPage = React.lazy(() => import("./pages/dashboard"));
 
 export default function AppRouter() {
   return (
@@ -16,6 +17,7 @@ export default function AppRouter() {
         <Route path="sign-up" element={<SignUpPage />}></Route>
         <Route path="verification" element={<VerificationPage />}></Route>
         <Route path="invite" element={<InvitePage />}></Route>
+        <Route path="dashboard" caseSensitive element={<DashboardPage />}></Route>
       </Routes>
     </Suspense>
   );

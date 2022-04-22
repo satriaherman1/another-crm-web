@@ -7,6 +7,8 @@ module.exports = {
         "crm-gray-600": "#AFAFAF",
         "crm-primary": "#0EC8CE",
         "crm-dark-400": "#333641",
+        "crm-dark-300": "#1E1F25",
+        "crm-mutted-blue": "#98A5CD",
       },
     },
   },
