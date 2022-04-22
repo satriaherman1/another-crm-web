@@ -1,0 +1,25 @@
+import Input from "@src/components/Input";
+import Button from "../../components/Button";
+import { LogoFullWhite, MailIcon } from "../../config/pathImage";
+
+export default function Invite() {
+  return (
+    <div className="bg-crm-dark text-white p-8 md:px-[10%] md:pt-[6%] h-full">
+      <img src={LogoFullWhite} alt="" width="250px" />
+
+      <h1 className="text-[36px] font-semibold mt-15 leading-[120%]">Invite people to your workspace</h1>
+      <p className="font-light text-crm-gray-600 mt-5">our mission is to to Increase your productivity</p>
+
+      <section className="mt-10 flex flex-col">
+        <label htmlFor="" className="text-white font-semibold">
+          Email Address
+        </label>
+        <Input placeholder="“Click enter to add another user" type="text" icon={MailIcon} />
+
+        <Button variant="primary" className="w-[fit-content] mt-6">
+          Done
+        </Button>
+      </section>
+    </div>
+  );
+}

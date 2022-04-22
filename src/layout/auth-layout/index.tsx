@@ -32,7 +32,7 @@ export default function AuthLayout(props: IAuthLayoutProps) {
           </div>
         </div>
 
-        <div className=" py-9 px-6 md:ml-16 md:w-[40%] justify-self-center">{children}</div>
+        <div className="h-full py-9 px-6 md:ml-16 md:w-[40%] justify-self-center">{children}</div>
       </div>
     </div>
   );

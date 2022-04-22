@@ -4,11 +4,8 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build:client": "tsc && vite build --outDir dist/",
-    "build:server": "tsc && vite build --outDir dist/server --ssr src/server/entry-server.js ",
-    "build": "npm run build:client && npm run build:server  ",
-    "preview": "vite preview",
-    "generate": "vite build --outDir dist/ && npm run build:server&& node prerender "
+    "build": "tsc && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "express": "^4.17.3",

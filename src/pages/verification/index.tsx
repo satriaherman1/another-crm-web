@@ -2,13 +2,19 @@ import { LockIcon, MailIcon, MessageQuestionIcon, UserIcon } from "@src/config/p
 import Button from "@src/components/Button";
 import Checkbox from "@src/components/Checkbox";
 import AuthLayout from "@src/layout/auth-layout";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import CrmOtpInput from "@src/components/OtpInput";
 import { useState } from "react";
 
 export default function Verification() {
   const [otpValue, setOtpValue] = useState<string>("");
   const [email, setEmail] = useState<string>("satriaherman967@gmail.com");
+
+  const navigate = useNavigate();
+
+  const submitVerifiCation = () => {
+    navigate("/invite");
+  };
 
   return (
     <AuthLayout>
@@ -27,7 +33,7 @@ export default function Verification() {
 
       <Checkbox label="Forgot Password" className="text-crm-gray-600 text-[14px] mt-6" />
 
-      <Button variant="primary" className="w-full mt-6">
+      <Button onClick={submitVerifiCation} variant="primary" className="w-full mt-6">
         Next
       </Button>
 

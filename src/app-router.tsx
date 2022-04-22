@@ -1,10 +1,11 @@
 import React, { Suspense } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
+const HomePage = React.lazy(() => import("./pages/home"));
 const SignInPage = React.lazy(() => import("./pages/sign-in"));
 const SignUpPage = React.lazy(() => import("./pages/sign-up"));
 const VerificationPage = React.lazy(() => import("./pages/verification"));
-const HomePage = React.lazy(() => import("./pages/home"));
+const InvitePage = React.lazy(() => import("./pages/invite"));
 
 export default function AppRouter() {
   return (
@@ -14,6 +15,7 @@ export default function AppRouter() {
         <Route path="sign-in" element={<SignInPage />}></Route>
         <Route path="sign-up" element={<SignUpPage />}></Route>
         <Route path="verification" element={<VerificationPage />}></Route>
+        <Route path="invite" element={<InvitePage />}></Route>
       </Routes>
     </Suspense>
   );
