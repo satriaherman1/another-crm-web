@@ -1,5 +1,11 @@
 @import "./utility/styles/font.scss";
 
+html,
+body,
+#root {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: "Axiforma", sans-serif;
