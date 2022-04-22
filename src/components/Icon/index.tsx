@@ -123,3 +123,214 @@ export function UserGroupIcon(props: IconProps): ReactElement {
     </svg>
   );
 }
+
+export function TicketIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M19.5 12.5C19.5 11.12 20.62 10 22 10V9C22 5 21 4 17 4H7C3 4 2 5 2 9V9.5C3.38 9.5 4.5 10.62 4.5 12C4.5 13.38 3.38 14.5 2 14.5V15C2 19 3 20 7 20H17C21 20 22 19 22 15C20.62 15 19.5 13.88 19.5 12.5Z"
+        stroke={fill ? fill : "#98A5CD"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path d="M10 4L10 20" stroke={fill ? fill : "#98A5CD"} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="5 5" />
+    </svg>
+  );
+}
+
+export function PriceTagIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M4.16989 15.3L8.69989 19.83C10.5599 21.69 13.5799 21.69 15.4499 19.83L19.8399 15.44C21.6999 13.58 21.6999 10.56 19.8399 8.69005L15.2999 4.17005C14.3499 3.22005 13.0399 2.71005 11.6999 2.78005L6.69989 3.02005C4.69989 3.11005 3.10989 4.70005 3.00989 6.69005L2.76989 11.69C2.70989 13.04 3.21989 14.35 4.16989 15.3Z"
+        stroke={fill ? fill : "#98A5CD"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M9.5 12C10.8807 12 12 10.8808 12 9.50005C12 8.11933 10.8807 7.00005 9.5 7.00005C8.11929 7.00005 7 8.11933 7 9.50005C7 10.8808 8.11929 12 9.5 12Z"
+        stroke={fill ? fill : "#98A5CD"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+      />
+    </svg>
+  );
+}
+
+export function NoteIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M20 8.25V18C20 21 18.21 22 16 22H8C5.79 22 4 21 4 18V8.25C4 5 5.79 4.25 8 4.25C8 4.87 8.24997 5.43 8.65997 5.84C9.06997 6.25 9.63 6.5 10.25 6.5H13.75C14.99 6.5 16 5.49 16 4.25C18.21 4.25 20 5 20 8.25Z"
+        stroke={fill ? fill : "#98A5CD"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M16 4.25C16 5.49 14.99 6.5 13.75 6.5H10.25C9.63 6.5 9.06997 6.25 8.65997 5.84C8.24997 5.43 8 4.87 8 4.25C8 3.01 9.01 2 10.25 2H13.75C14.37 2 14.93 2.25 15.34 2.66C15.75 3.07 16 3.63 16 4.25Z"
+        stroke={fill ? fill : "#98A5CD"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path d="M8 13H12" stroke={fill ? fill : "#98A5CD"} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M8 17H16" stroke={fill ? fill : "#98A5CD"} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  );
+}
+
+export function MenuIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 10H7C9 10 10 9 10 7V5C10 3 9 2 7 2H5C3 2 2 3 2 5V7C2 9 3 10 5 10Z" stroke="#98A5CD" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      <path
+        d="M17 10H19C21 10 22 9 22 7V5C22 3 21 2 19 2H17C15 2 14 3 14 5V7C14 9 15 10 17 10Z"
+        stroke={fill ? fill : "#98A5CD"}
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M17 22H19C21 22 22 21 22 19V17C22 15 21 14 19 14H17C15 14 14 15 14 17V19C14 21 15 22 17 22Z"
+        stroke={fill ? fill : "#98A5CD"}
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M5 22H7C9 22 10 21 10 19V17C10 15 9 14 7 14H5C3 14 2 15 2 17V19C2 21 3 22 5 22Z"
+        stroke={fill ? fill : "#98A5CD"}
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function Note2Icon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M21.6602 10.44L20.6802 14.62C19.8402 18.23 18.1802 19.69 15.0602 19.39C14.5602 19.35 14.0202 19.26 13.4402 19.12L11.7602 18.72C7.59018 17.73 6.30018 15.67 7.28018 11.49L8.26018 7.29999C8.46018 6.44999 8.70018 5.70999 9.00018 5.09999C10.1702 2.67999 12.1602 2.02999 15.5002 2.81999L17.1702 3.20999C21.3602 4.18999 22.6402 6.25999 21.6602 10.44Z"
+        stroke={fill ? fill : "#98A5CD"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M15.0599 19.39C14.4399 19.81 13.6599 20.16 12.7099 20.47L11.1299 20.99C7.15985 22.27 5.06985 21.2 3.77985 17.23L2.49985 13.28C1.21985 9.31001 2.27985 7.21001 6.24985 5.93001L7.82985 5.41001C8.23985 5.28001 8.62985 5.17001 8.99985 5.10001C8.69985 5.71001 8.45985 6.45001 8.25985 7.30001L7.27985 11.49C6.29985 15.67 7.58985 17.73 11.7599 18.72L13.4399 19.12C14.0199 19.26 14.5599 19.35 15.0599 19.39Z"
+        stroke={fill ? fill : "#98A5CD"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path d="M12.6401 8.53L17.4901 9.76" stroke={fill ? fill : "#98A5CD"} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M11.6602 12.4L14.5602 13.14" stroke={fill ? fill : "#98A5CD"} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  );
+}
+
+export function SettingIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M3.09082 9.10998V14.88C3.09082 17 3.09082 17 4.909 18.35L9.909 21.53C10.6635 22.01 11.8908 22.01 12.6363 21.53L17.6363 18.35C19.4545 17 19.4545 17 19.4545 14.89V9.10998C19.4545 6.99998 19.4545 6.99999 17.6363 5.64999L12.6363 2.46999C11.8908 1.98999 10.6635 1.98999 9.909 2.46999L4.909 5.64999C3.09082 6.99999 3.09082 6.99998 3.09082 9.10998Z"
+        stroke={fill ? fill : "#98A5CD"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M11.2727 15C12.7789 15 14 13.6569 14 12C14 10.3431 12.7789 9 11.2727 9C9.76645 9 8.54541 10.3431 8.54541 12C8.54541 13.6569 9.76645 15 11.2727 15Z"
+        stroke={fill ? fill : "#98A5CD"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function LogoutIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10.9819 14.62L13.3092 12.06L10.9819 9.5" stroke={fill ? fill : "#EB5757"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M4 12.06H13.2455" stroke={fill ? fill : "#EB5757"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      <path
+        d="M11.2729 4C15.2911 4 18.5457 7 18.5457 12C18.5457 17 15.2911 20 11.2729 20"
+        stroke={fill ? fill : "#EB5757"}
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function MailIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M17 20.5H7C4 20.5 2 19 2 15.5V8.5C2 5 4 3.5 7 3.5H17C20 3.5 22 5 22 8.5V15.5C22 19 20 20.5 17 20.5Z"
+        stroke={fill ? fill : "white"}
+        stroke-opacity="0.72"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path d="M17 9L13.87 11.5C12.84 12.32 11.15 12.32 10.12 11.5L7 9" stroke="white" stroke-opacity="0.72" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  );
+}
+
+export function NotificationIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className ?? ""}>
+      <path
+        fill-rule="evenodd"
+        clip-rule="evenodd"
+        d="M12.6143 17.8476C18.2535 17.8476 20.8623 17.1242 21.1143 14.2205C21.1143 11.3188 19.2954 11.5054 19.2954 7.94511C19.2954 5.16414 16.6595 2 12.6143 2C8.56903 2 5.93311 5.16414 5.93311 7.94511C5.93311 11.5054 4.11426 11.3188 4.11426 14.2205C4.36721 17.1352 6.97603 17.8476 12.6143 17.8476Z"
+        stroke={fill ? fill : "white"}
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path d="M15.0031 20.8572C13.639 22.3719 11.511 22.3899 10.1338 20.8572" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  );
+}
+
+export function Setting5Icon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className ?? ""}>
+      <path d="M19.6143 22V11" stroke={fill ? fill : "white"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M19.6143 7V2" stroke={fill ? fill : "white"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M12.6143 22V17" stroke={fill ? fill : "white"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M12.6143 13V2" stroke={fill ? fill : "white"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M5.61426 22V11" stroke={fill ? fill : "white"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M5.61426 7V2" stroke={fill ? fill : "white"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M3.61426 11H7.61426" stroke={fill ? fill : "white"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M17.6143 11H21.6143" stroke={fill ? fill : "white"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M10.6143 13H14.6143" stroke={fill ? fill : "white"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  );
+}
