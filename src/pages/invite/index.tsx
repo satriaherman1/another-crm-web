@@ -1,8 +1,15 @@
 import Input from "@src/components/Input";
+import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import { LogoFullWhite, MailIcon } from "../../config/pathImage";
 
 export default function Invite() {
+  const navigate = useNavigate();
+
+  const invitePeopleAction = () => {
+    navigate("/dashboard");
+  };
+
   return (
     <div className="bg-crm-dark text-white p-8 md:px-[10%] md:pt-[6%] h-full">
       <img src={LogoFullWhite} alt="" width="250px" />
@@ -16,7 +23,7 @@ export default function Invite() {
         </label>
         <Input placeholder="“Click enter to add another user" type="text" icon={MailIcon} />
 
-        <Button variant="primary" className="w-[fit-content] mt-6">
+        <Button onClick={invitePeopleAction} variant="primary" className="w-[fit-content] mt-6">
           Done
         </Button>
       </section>
