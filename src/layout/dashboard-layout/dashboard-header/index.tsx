@@ -1,5 +1,6 @@
 import { NotificationIcon, Setting5Icon } from "@src/components/Icon";
 import { StarIcon } from "@src/config/pathImage";
+import { NavLink } from "react-router-dom";
 
 export default function DashboardHeader() {
   return (
@@ -8,10 +9,12 @@ export default function DashboardHeader() {
       <div className="divider h-[30px] w-[2px] bg-gray-700 mx-3"></div>
       <p>Trial Days Left :8 </p>
 
-      <div className="upgrade-box pb-1 pt-2 px-3 h-[fit-content] bg-[#282C38] flex items-center ml-2 rounded-md">
-        <img src={StarIcon} width={20} alt="" className="-mt-1" />
-        <p className="uppercase text-crm-yellow ml-2 h-[fit-content] font-semibold">Upgrade billing plan</p>
-      </div>
+      <NavLink to="/order-summary">
+        <div className="upgrade-box pb-1 pt-2 px-3 h-[fit-content] bg-[#282C38] flex items-center ml-2 rounded-md">
+          <img src={StarIcon} width={20} alt="" className="-mt-1" />
+          <p className="uppercase text-crm-yellow ml-2 h-[fit-content] font-semibold">Upgrade billing plan</p>
+        </div>
+      </NavLink>
 
       <div className="ml-auto flex">
         <div className="divider h-[30px] w-[2px] bg-gray-700 mx-3"></div>

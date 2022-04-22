@@ -5,6 +5,7 @@ module.exports = {
       colors: {
         "crm-dark": "#141518",
         "crm-gray-600": "#AFAFAF",
+        "crm-gray-400": "#2C2E34",
         "crm-primary": "#0EC8CE",
         "crm-dark-400": "#333641",
         "crm-dark-300": "#1E1F25",

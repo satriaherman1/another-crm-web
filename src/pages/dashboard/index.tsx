@@ -58,7 +58,7 @@ export default function Dashboard() {
           <p className="text-white mt-7 text-[14px]">
             This Week : <span className="ml-3 text-crm-gray-600">Apr 11 - Apr 17</span>
           </p>
-          <div className="statistic-summary flex mt-3 mb-8">
+          <div className="statistic-summary flex mt-4 mb-8">
             <span className="flex pr-5 border-r border-[#616161]">
               <h4 className="text-white font-semibold text-[30px]">12</h4>
               <p className="text-crm-gray-600 ml-3">Completed</p>

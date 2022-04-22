@@ -6,5 +6,8 @@ import MailIcon from "@src/assets/icons/mail.svg";
 import UserIcon from "@src/assets/icons/user.svg";
 import StarIcon from "@src/assets/icons/dashboard/star.svg";
 import LogoFullWhite from "@src/assets/img/logo-full-white.png";
+import VisaLogo from "@src/assets/img/order-summary/visa.png";
+import MasterCardLogo from "@src/assets/img/order-summary/master-card.png";
+import AmericanExpressLogo from "@src/assets/img/order-summary/american-express.png";
 
-export { SignInBanner, MessageQuestionIcon, LogoFull, LogoFullWhite, LockIcon, MailIcon, UserIcon, StarIcon };
+export { SignInBanner, MessageQuestionIcon, LogoFull, LogoFullWhite, LockIcon, MailIcon, UserIcon, StarIcon, VisaLogo, MasterCardLogo, AmericanExpressLogo };
