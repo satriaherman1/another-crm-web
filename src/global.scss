@@ -1,11 +1,5 @@
 @import "./utility/styles/font.scss";
 
-html,
-body,
-#root {
-  height: 100%;
-}
-
 body {
   margin: 0;
   font-family: "Axiforma", sans-serif;
@@ -25,4 +19,12 @@ button {
 h1,
 h2 {
   line-height: 200%;
+}
+
+@media screen and (min-width: 1020px) {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
 }
