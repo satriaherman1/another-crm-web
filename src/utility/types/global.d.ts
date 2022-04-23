@@ -3,6 +3,7 @@ declare interface ICrmInput {
   className?: string;
   placeholder?: string;
   icon?: any;
+  style?: any;
 }
 declare interface ICrmButton {
   variant: "primary" | "secondary";

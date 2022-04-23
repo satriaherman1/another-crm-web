@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { CloseCircleIcon, TickCircleIcon } from "../../components/Icon";
+import { NavLink } from "react-router-dom";
+import Button from "../../components/Button";
+import { CloseCircleIcon, LockIcon, TickCircleIcon } from "../../components/Icon";
+import Input from "../../components/Input";
 import BillCheckbox from "../../components/pages/order-summary/bill-checkbox";
 import { AmericanExpressLogo, MasterCardLogo, VisaLogo } from "../../config/pathImage";
 
@@ -7,6 +10,7 @@ export default function OrderSummary() {
   const [fullName, setFullName] = useState<string>("Jordan Olivas");
   const [initialName, setInitialName] = useState<string>("");
   const [selectedBill, setSelectedBill] = useState<string>("");
+  const [selectedBillPrice, setSelectedBillPrice] = useState<number>();
 
   useEffect(() => {
     const arrFullName = fullName.split(" ");
@@ -19,8 +23,8 @@ export default function OrderSummary() {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row bg-crm-dark h-full">
-      <section className="text-white px-6 py-12 md:pl-[10%] md:pr-14 md:pt-17">
+    <div className="flex flex-col md:flex-row bg-crm-dark h-full overflow-y-scroll">
+      <section className="text-white md:overflow-y-scroll  px-6 py-12 md:pl-[10%] md:pr-14 md:pt-17">
         <h2 className="text-[32px] font-semibold ">Order Summary</h2>
         <p className="mt-2 text-crm-gray-600">Upgrade Your Plan</p>
 
@@ -34,20 +38,66 @@ export default function OrderSummary() {
         <p className="text-[20px]">Billing Plan</p>
 
         <div className="flex flex-col md:pl-0 md:flex-row mt-4 gap-8">
-          <BillCheckbox billType="Yearly" price="16.00" onClick={() => setSelectedBill("yearly")} active={selectedBill === "yearly"} />
-          <BillCheckbox billType="Monthly" price="19.00" onClick={() => setSelectedBill("monthly")} active={selectedBill === "monthly"} />
+          <BillCheckbox
+            billType="Yearly"
+            price="16.00"
+            onClick={() => {
+              setSelectedBill("yearly");
+              setSelectedBillPrice(16.0);
+            }}
+            active={selectedBill === "yearly"}
+          />
+          <BillCheckbox
+            billType="Monthly"
+            price="19.00"
+            onClick={() => {
+              setSelectedBill("monthly");
+              setSelectedBillPrice(19.0);
+            }}
+            active={selectedBill === "monthly"}
+          />
         </div>
 
         {selectedBill && (
-          <div className="mt-9">
+          <div className="mt-9 ">
             <p className="text-[18px] font-semibold lowercase">
               <span className="capitalize">{selectedBill}</span> Plan
             </p>
+
+            <div className="border-y justify-between border-dashed border-crm-dark-400  mt-4 flex py-2">
+              <p className="text-[14px]">3 Licenses</p>
+              <h5 className="font-semibold text-crm-primary">${selectedBillPrice}.00</h5>
+            </div>
+
+            <button className="border-0 bg-none text-crm-orange font-normal capitalize my-2">change plans</button>
+
+            <div className="flex items-center w-full mt-9">
+              <p className="text-[18px] self-center font-semibold ">Payment details</p>
+              <LockIcon className="ml-4" />
+            </div>
+
+            <form action="" className="mt-2">
+              <section className="block">
+                <Input type="text" placeholder="Enter your credit number" className="w-full box-border md:box-content" />
+              </section>
+
+              <section className="flex gap-x-5 flex flex-col">
+                <Input type="text" placeholder="Expiring MM/YY" className="md:w-[35%]" />
+                <Input type="text" placeholder="CVV Code" className="md:w-[35%]" />
+              </section>
+              <section className="flex gap-x-5">
+                <Input type="text" placeholder="Zip Code" className="md:w-[35%] w-full" />
+              </section>
+
+              <Button className="w-full mt-9 md:box-content" variant="primary">
+                Upgrade
+              </Button>
+            </form>
           </div>
         )}
       </section>
 
-      <section className="bg-crm-dark-400 mt-20 md:mt-0 py-9 md:pb-0  w-full md:pt-17 px-9 text-white">
+      <section className="bg-crm-dark-400 mt-20 md:mt-0 py-9 md:pb-0  w-full md:w-[40%] md:pt-17 px-9 text-white ">
         <h3 className="text-crm-primary text-[32px] font-semibold">intro</h3>
         <p className="mt-3">3 Sequences</p>
 

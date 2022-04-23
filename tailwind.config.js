@@ -12,6 +12,7 @@ module.exports = {
         "crm-mutted-blue": "#98A5CD",
         "crm-red": "#EB5757",
         "crm-yellow": "#FFB545",
+        "crm-orange": "#F2994A",
       },
     },
   },
