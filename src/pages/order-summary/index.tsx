@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { CloseCircleIcon, LockIcon, TickCircleIcon } from "@src/components/Icon";
+import { LockIcon } from "@src/components/Icon";
 import BillCheckbox from "@src/components/pages/order-summary/bill-checkbox";
 import OrderSummaryPaymentForm from "@src/components/pages/order-summary/payment-form";
 import { AmericanExpressLogo, MasterCardLogo, VisaLogo } from "@src/config/pathImage";
+import OrderSummaryOrderFeature from "@src/components/pages/order-summary/order-feature";
 
 export default function OrderSummary() {
   const [fullName, setFullName] = useState<string>("Jordan Olivas");
@@ -82,6 +83,8 @@ export default function OrderSummary() {
       <section className="bg-crm-dark-400 mt-20 md:mt-0 py-9 md:pb-0  w-full md:w-[40%] md:pt-17 px-9 text-white ">
         <h3 className="text-crm-primary text-[32px] font-semibold">intro</h3>
         <p className="mt-3">3 Sequences</p>
+
+        <OrderSummaryOrderFeature />
 
         <p className="mt-12">We accept the following cards</p>
         <div className="mt-4 flex gap-7">
