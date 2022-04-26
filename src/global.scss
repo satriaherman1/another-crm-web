@@ -27,10 +27,6 @@ h2 {
   line-height: 200%;
 }
 
-// @media screen and (min-width: 1020px) {
-//   html,
-//   body,
-//   #root {
-//     height: 100%;
-//   }
-// }
+.txt-crm-primary {
+  @apply text-crm-primary;
+}

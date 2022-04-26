@@ -14,7 +14,7 @@ export default function DashboardLayout(props: IDashboardLayoutProps) {
 
   return (
     <div className="flex h-full  bg-crm-dark pr-5">
-      <section className={`sidebar overflow-scroll duration-200 py-8 px-4 bg-crm-dark-300  max-w-[260px] text-crm-mutted-blue h-full ${isMinimize ? "w-[90px]" : "w-full"}`}>
+      <section className={`sidebar overflow-scroll duration-200 py-8 px-4 bg-crm-dark-300  max-w-[240px] text-crm-mutted-blue h-full ${isMinimize ? "w-[90px]" : "w-full"}`}>
         <div className="flex justify-between">
           {!isMinimize && <img src={LogoFullWhite} alt="" width={170} />}
 

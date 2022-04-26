@@ -8,7 +8,7 @@ interface ICrmCheckbox {
 export default function Checkbox(props: ICrmCheckbox) {
   const { label, className } = props;
   return (
-    <label className={`${className} checkbox-container`}>
+    <label className={`${className ?? ""} checkbox-container`}>
       <input type="checkbox" className="custom-checkbox" />
       <span className="checkmark"></span>
       <p className="mb-0">{label}</p>

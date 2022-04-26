@@ -467,3 +467,27 @@ export function MoreIcon(props: IconProps): ReactElement {
     </svg>
   );
 }
+
+export function SendIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M9.19257 4.38421C6.39848 2.98547 3.29759 5.63695 4.24839 8.61184L5.33571 12.0138L4.25431 15.3845C3.30043 18.3576 6.3969 21.0124 9.19248 19.6182L18.1193 15.1663C20.7223 13.8682 20.7252 10.1575 18.1241 8.85543L9.19257 4.38421Z"
+        fill={fill ? fill : "#0EC8CE"}
+      />
+    </svg>
+  );
+}
+
+export function VideoCircleIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M12.6862 2C6.8842 2 2.17529 6.48 2.17529 12C2.17529 17.52 6.8842 22 12.6862 22C18.4883 22 23.1972 17.52 23.1972 12C23.1972 6.48 18.4883 2 12.6862 2ZM15.4822 13.73L14.1368 14.47L12.7914 15.21C11.057 16.16 9.63807 15.38 9.63807 13.48V12V10.52C9.63807 8.61 11.057 7.84 12.7914 8.79L14.1368 9.53L15.4822 10.27C17.2165 11.22 17.2165 12.78 15.4822 13.73Z"
+        fill={fill ? fill : "#0EC8CE"}
+      />
+    </svg>
+  );
+}
