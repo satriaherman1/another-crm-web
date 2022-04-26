@@ -12,3 +12,18 @@ declare interface ICrmButton {
   children: any;
   onClick?: (val?: any) => any;
 }
+
+declare interface ICrmColumns {
+  field: string;
+  display: boolean;
+}
+declare interface ICrmRows {
+  id?: any;
+
+  value: ICrmRowsValue[];
+}
+
+interface ICrmRowsValue {
+  field: string;
+  value: React.ReactElement | string;
+}

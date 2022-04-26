@@ -1,5 +1,5 @@
 import { LogoFullWhite } from "@src/config/pathImage";
-import { HamburgerMenuIcon } from "@src/components/Icon";
+import { HamburgerMenuIcon } from "@src/components/common/Icon";
 import DashboardNavList from "./dashboard-nav-list";
 
 import { useState } from "react";

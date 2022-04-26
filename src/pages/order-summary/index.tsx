@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { LockIcon } from "@src/components/Icon";
+import { LockIcon } from "@src/components/common/Icon";
 import BillCheckbox from "@src/components/pages/order-summary/bill-checkbox";
 import OrderSummaryPaymentForm from "@src/components/pages/order-summary/payment-form";
 import { AmericanExpressLogo, MasterCardLogo, VisaLogo } from "@src/config/pathImage";

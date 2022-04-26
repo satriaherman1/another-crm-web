@@ -394,3 +394,76 @@ export function LockIcon(props: IconProps): ReactElement {
     </svg>
   );
 }
+
+export function FilterIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M20.6726 4.10001V6.30001C20.6726 7.10001 20.1726 8.10001 19.6726 8.60001L15.3726 12.4C14.7726 12.9 14.3726 13.9 14.3726 14.7V19C14.3726 19.6 13.9726 20.4 13.4726 20.7L12.0726 21.6C10.7726 22.4 8.97264 21.5 8.97264 19.9V14.6C8.97264 13.9 8.57264 13 8.17264 12.5L7.70264 12.01C7.39264 11.68 7.33264 11.18 7.58264 10.79L12.7026 2.57001C12.8826 2.28001 13.2026 2.10001 13.5526 2.10001H18.6726C19.7726 2.10001 20.6726 3.00001 20.6726 4.10001Z"
+        fill={fill ? fill : "#757B8C"}
+      />
+      <path
+        d="M10.4227 3.63001L6.87266 9.32001C6.53266 9.87001 5.75266 9.95001 5.30266 9.48001L4.37266 8.50001C3.87266 8.00001 3.47266 7.10001 3.47266 6.50001V4.20001C3.47266 3.00001 4.37266 2.10001 5.47266 2.10001H9.57266C10.3527 2.10001 10.8327 2.96001 10.4227 3.63001Z"
+        fill={fill ? fill : "#757B8C"}
+      />
+    </svg>
+  );
+}
+
+export function EyeIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M22.4089 9.15C19.9808 5.52 16.4281 3.43 12.6862 3.43C10.8153 3.43 8.9969 3.95 7.33617 4.92C5.67544 5.9 4.18288 7.33 2.96361 9.15C1.91252 10.72 1.91252 13.27 2.96361 14.84C5.39164 18.48 8.94434 20.56 12.6862 20.56C14.5572 20.56 16.3756 20.04 18.0363 19.07C19.697 18.09 21.1896 16.66 22.4089 14.84C23.46 13.28 23.46 10.72 22.4089 9.15ZM12.6862 16.04C10.3318 16.04 8.43982 14.23 8.43982 12C8.43982 9.77 10.3318 7.96 12.6862 7.96C15.0407 7.96 16.9327 9.77 16.9327 12C16.9327 14.23 15.0407 16.04 12.6862 16.04Z"
+        fill={fill ? fill : "#0EC8CE"}
+      />
+      <path
+        d="M12.6865 9.14C11.0363 9.14 9.69092 10.42 9.69092 12C9.69092 13.57 11.0363 14.85 12.6865 14.85C14.3368 14.85 15.6927 13.57 15.6927 12C15.6927 10.43 14.3368 9.14 12.6865 9.14Z"
+        fill={fill ? fill : "#0EC8CE"}
+      />
+    </svg>
+  );
+}
+
+export function MonitorIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M5.43975 1.66666H14.6981C17.6647 1.66666 18.4064 2.40833 18.4064 5.36666V10.6417C18.4064 13.6083 17.6647 14.3417 14.7064 14.3417H5.43975C2.48141 14.35 1.73975 13.6083 1.73975 10.65V5.36666C1.73975 2.40833 2.48141 1.66666 5.43975 1.66666Z"
+        stroke={fill ? fill : "#C4C4C4"}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M10.0732 14.35V18.3333" stroke={fill ? fill : "#C4C4C4"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M1.73975 10.8333H18.4064" stroke={fill ? fill : "#C4C4C4"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6.32324 18.3333H13.8232" stroke={fill ? fill : "#C4C4C4"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function MoreIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M5.80287 10C4.64667 10 3.70068 10.9 3.70068 12C3.70068 13.1 4.64667 14 5.80287 14C6.95908 14 7.90506 13.1 7.90506 12C7.90506 10.9 6.95908 10 5.80287 10Z"
+        stroke={fill ? fill : "white"}
+        strokeWidth="1.5"
+      />
+      <path
+        d="M20.5182 10C19.362 10 18.416 10.9 18.416 12C18.416 13.1 19.362 14 20.5182 14C21.6744 14 22.6204 13.1 22.6204 12C22.6204 10.9 21.6744 10 20.5182 10Z"
+        stroke={fill ? fill : "white"}
+        strokeWidth="1.5"
+      />
+      <path
+        d="M13.1603 10C12.0041 10 11.0581 10.9 11.0581 12C11.0581 13.1 12.0041 14 13.1603 14C14.3165 14 15.2625 13.1 15.2625 12C15.2625 10.9 14.3165 10 13.1603 10Z"
+        stroke={fill ? fill : "white"}
+        strokeWidth="1.5"
+      />
+    </svg>
+  );
+}

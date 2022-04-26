@@ -1,9 +1,9 @@
 import { LockIcon, MailIcon, MessageQuestionIcon, UserIcon } from "@src/config/pathImage";
-import Button from "@src/components/Button";
-import Checkbox from "@src/components/Checkbox";
+import Button from "@src/components/common/Button";
+import Checkbox from "@src/components/common/Checkbox";
 import AuthLayout from "@src/layout/auth-layout";
 import { NavLink, useNavigate } from "react-router-dom";
-import CrmOtpInput from "@src/components/OtpInput";
+import CrmOtpInput from "@src/components/common/OtpInput";
 import { useState } from "react";
 
 export default function Verification() {

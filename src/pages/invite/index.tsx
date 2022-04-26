@@ -1,6 +1,6 @@
-import Input from "@src/components/Input";
+import Input from "@src/components/common/Input";
 import { useNavigate } from "react-router-dom";
-import Button from "../../components/Button";
+import Button from "../../components/common/Button";
 import { LogoFullWhite, MailIcon } from "../../config/pathImage";
 
 export default function Invite() {

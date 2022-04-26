@@ -1,7 +1,7 @@
 import { LockIcon, MailIcon, MessageQuestionIcon, UserIcon } from "@src/config/pathImage";
-import Input from "@src/components/Input";
-import Button from "@src/components/Button";
-import Checkbox from "@src/components/Checkbox";
+import Input from "@src/components/common/Input";
+import Button from "@src/components/common/Button";
+import Checkbox from "@src/components/common/Checkbox";
 import AuthLayout from "@src/layout/auth-layout";
 import { NavLink, useNavigate } from "react-router-dom";
 

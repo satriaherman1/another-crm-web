@@ -1,9 +1,12 @@
 import DashboardLayout from "@src/layout/dashboard-layout";
 import { useState } from "react";
 import { Line } from "react-chartjs-2";
+import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
+import { FilterIcon } from "@src/components/common/Icon";
 import faker from "@faker-js/faker";
-
 import "./styles.scss";
+import DashboardActivityList from "@src/components/pages/dashboard/activity-list";
+import Table from "@src/components/common/Table";
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -40,12 +43,60 @@ export const data = {
   ],
 };
 
+const ImageColumnTable = () => {
+  return <img src="/src/assets/img/avatar-example.png" width="35px" height="35px" className="rounded-full" />;
+};
+
+const columns: ICrmColumns[] = [
+  {
+    field: "image",
+    display: false,
+  },
+  {
+    field: "name",
+    display: false,
+  },
+  {
+    field: "task",
+    display: false,
+  },
+];
+
+const rows: ICrmRows[] = [
+  {
+    id: 1,
+    value: [
+      {
+        field: "image",
+        value: <ImageColumnTable />,
+      },
+      {
+        field: "name",
+        value: "Dimast ariyanto",
+      },
+    ],
+  },
+  {
+    id: 2,
+    value: [
+      {
+        field: "image",
+        value: <ImageColumnTable />,
+      },
+      {
+        field: "name",
+        value: "Dimast ariyanto",
+      },
+    ],
+  },
+];
+
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState<string>("task");
   return (
     <DashboardLayout>
-      <div className="flex mt-8 w-full gap-5">
-        <section className="dashboard-statistic bg-crm-dark-300 text-white w-full px-5 py-3 rounded-md">
+      <div className="flex flex-col md:flex-row flex-wrap mt-8 w-full gap-5">
+        <section className="dashboard-statistic  md:basis-[55%] bg-crm-dark-300 text-white w-full px-5 py-3 rounded-md">
           <div className="statistic-tab flex text-crm-gray-600">
             <button onClick={() => setActiveTab("task")} className={`bg-none py-3 px-3 ${activeTab === "task" && "active"}`}>
               Task
@@ -82,10 +133,24 @@ export default function Dashboard() {
           </div>
         </section>
 
-        <section className="w-[300px]">hi</section>
+        <section className="w-[300px] py-4 bg-crm-dark-300 md:basis-[40%] rounded-md">
+          <div className="flex">
+            <button className="p-2 rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-300">
+              <FilterIcon />
+            </button>
+            <button className="py-2 px-3 text-white font-normal rounded-md border border-crm-gray-350 ml-2 bg-crm-gray-300">Clear Filters</button>
+          </div>
+
+          <div className="w-full bg-crm-gray-400 mt-4 py-3 px-5 text-crm-gray border-y border-crm-gray-350">2 weeks ago</div>
+
+          <DashboardActivityList mailDate="hi" createdDate="da" content="Prospect Keith Hnaituk opened No Cod BNPL Comparison Tool Step #1 (Manual Email) of Enterprise Custom - Email Only Sequence" />
+          <DashboardActivityList mailDate="hi" createdDate="da" content="Prospect Keith Hnaituk opened No Cod BNPL Comparison Tool Step #1 (Manual Email) of Enterprise Custom - Email Only Sequence" />
+        </section>
+
+        <section className="text-white mb-9 basis-[58%] overflow-y-hidden bg-crm-dark-300 text-white w-full px-5 py-3 rounded-md">
+          <Table rows={rows} columns={columns} className="bg-transparent" />
+        </section>
       </div>
     </DashboardLayout>
   );
 }
-
-import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";

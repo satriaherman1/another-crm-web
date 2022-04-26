@@ -12,7 +12,7 @@ import {
   TicketIcon,
   UserGroupIcon,
   UserProfileIcon,
-} from "@src/components/Icon";
+} from "@src/components/common/Icon";
 import { NavLink } from "react-router-dom";
 
 interface IDashboardNavListProps {
@@ -23,7 +23,7 @@ export default function DashboardNavList(props: IDashboardNavListProps) {
   const { isMinimize } = props;
 
   return (
-    <ul className="mt-3 ">
+    <ul className="mt-3 pl-3">
       <li className="py-4">
         <NavLink to="/dashboard" className="flex">
           <MenuIcon className={`${isMinimize && "mx-auto"}`} />

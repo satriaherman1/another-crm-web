@@ -1,4 +1,4 @@
-import { NotificationIcon, Setting5Icon } from "@src/components/Icon";
+import { NotificationIcon, Setting5Icon } from "@src/components/common/Icon";
 import { StarIcon } from "@src/config/pathImage";
 import { NavLink } from "react-router-dom";
 
