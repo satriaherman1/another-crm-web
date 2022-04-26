@@ -1,4 +1,4 @@
-import { CloseCircleIcon, TickCircleIcon } from "@src/components/Icon";
+import { CloseCircleIcon, TickCircleIcon } from "@src/components/common/Icon";
 
 export default function OrderSummaryOrderFeature() {
   return (

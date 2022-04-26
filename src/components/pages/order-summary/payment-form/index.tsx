@@ -1,5 +1,5 @@
-import Input from "@src/components/Input";
-import Button from "@src/components/Button";
+import Input from "@src/components/common/Input";
+import Button from "@src/components/common/Button";
 
 export default function OrderSummaryPaymentForm() {
   return (
