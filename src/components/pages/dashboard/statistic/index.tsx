@@ -54,20 +54,20 @@ export default function DashboardStatistic() {
       <p className="text-white mt-7 text-[14px]">
         This Week : <span className="ml-3 text-crm-gray-600">Apr 11 - Apr 17</span>
       </p>
-      <div className="statistic-summary flex mt-4 mb-8">
+      <div className="statistic-summary flex mt-4 mb-8 flex-wrap gap-y-5">
         <span className="flex pr-5 border-r border-[#616161]">
           <h4 className="text-white font-semibold text-[30px]">12</h4>
           <p className="text-crm-gray-600 ml-3">Completed</p>
         </span>
-        <span className="flex pr-5 border-r border-[#616161] pl-5">
+        <span className="flex pr-5 border-r border-[#616161] md:pl-5 pl-3">
           <h4 className="text-white font-semibold text-[30px]">0%</h4>
           <p className="text-crm-gray-600 ml-3">Emails</p>
         </span>
-        <span className="flex pr-5 border-r border-[#616161] pl-5">
+        <span className="flex pr-5 border-r border-[#616161] md:pl-5 pl-0">
           <h4 className="text-white font-semibold text-[30px]">100%</h4>
           <p className="text-crm-gray-600 ml-3">Calls</p>
         </span>
-        <span className="flex pr-5 pl-5">
+        <span className="flex pr-5 md:pl-5 pl-3">
           <h4 className="text-white font-semibold text-[30px]">0%</h4>
           <p className="text-crm-gray-600 ml-3">Calls</p>
         </span>

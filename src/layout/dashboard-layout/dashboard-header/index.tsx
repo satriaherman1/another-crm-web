@@ -4,19 +4,29 @@ import { NavLink } from "react-router-dom";
 
 export default function DashboardHeader() {
   return (
-    <div className="dashboard-head-layout  bg-crm-dark-300 flex items-center py-7 px-6 mt-4  rounded text-white">
-      <h1 className="font-semibold text-[24px] w-[fit-content]">Dashboard</h1>
-      <div className="divider h-[30px] w-[2px] bg-gray-700 mx-3"></div>
-      <p>Trial Days Left :8 </p>
+    <div className="dashboard-head-layout  bg-crm-dark-300 flex flex-col md:flex-row md:items-center py-7 px-6 mt-4  rounded text-white">
+      <div className="flex justify-between w-full md:w-[fit-content]">
+        <h1 className="font-semibold text-[24px] w-[fit-content]">Dashboard</h1>
 
-      <NavLink to="/order-summary">
-        <div className="upgrade-box pb-1 pt-2 px-3 h-[fit-content] bg-[#282C38] flex items-center ml-2 rounded-md">
-          <img src={StarIcon} width={20} alt="" className="-mt-1" />
-          <p className="uppercase text-crm-yellow ml-2 h-[fit-content] font-semibold">Upgrade billing plan</p>
+        <div className="ml-auto flex md:hidden ">
+          <div className="divider h-[30px] w-[2px] bg-gray-700 mx-3"></div>
+          <NotificationIcon />
+          <Setting5Icon className="ml-3" />
         </div>
-      </NavLink>
+      </div>
+      <div className="flex mt-6 md:mt-0 flex-col md:flex-row md:items-center order-last md:order-2">
+        <div className="divider hidden md:block h-[30px] w-[2px] bg-gray-700 mx-3"></div>
+        <p>Trial Days Left :8 </p>
 
-      <div className="ml-auto flex">
+        <NavLink to="/order-summary">
+          <div className="upgrade-box pb-1 pt-2 px-3 h-[fit-content] w-[fit-content] bg-[#282C38] flex items-center md:ml-2 mt-3 md:mt-0 rounded-md">
+            <img src={StarIcon} width={20} alt="" className="-mt-1" />
+            <p className="uppercase text-crm-yellow ml-2 h-[fit-content] font-semibold">Upgrade billing plan</p>
+          </div>
+        </NavLink>
+      </div>
+
+      <div className="ml-auto  hidden md:flex order-last w-[fit-content]">
         <div className="divider h-[30px] w-[2px] bg-gray-700 mx-3"></div>
         <NotificationIcon />
         <Setting5Icon className="ml-3" />

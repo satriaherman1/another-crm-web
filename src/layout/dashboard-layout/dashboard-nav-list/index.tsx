@@ -18,10 +18,11 @@ import { NavLink, useRoutes } from "react-router-dom";
 
 interface IDashboardNavListProps {
   isMinimize: boolean;
+  className?: string;
 }
 
 export default function DashboardNavList(props: IDashboardNavListProps) {
-  const { isMinimize } = props;
+  const { isMinimize, className } = props;
 
   const [activeSidebarList, setActiveSidebarList] = useState<string>("");
 
@@ -32,7 +33,7 @@ export default function DashboardNavList(props: IDashboardNavListProps) {
   }, []);
 
   return (
-    <ul className="mt-3 ">
+    <ul className={`mt-3 ${className}`}>
       <li className={`py-4 ${activeSidebarList === "dashboard" ? "navlist-active" : ""} `}>
         <NavLink to="/dashboard" className="flex">
           <MenuIcon fill={activeSidebarList === "dashboard" ? "#0EC8CE" : ""} className={`${isMinimize && "mx-auto"}`} />

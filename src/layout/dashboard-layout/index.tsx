@@ -13,27 +13,49 @@ interface IDashboardLayoutProps {
 export default function DashboardLayout(props: IDashboardLayoutProps) {
   const { children } = props;
   const [isMinimize, setIsMinimize] = useState<boolean>(false);
+  const [isOpenNav, setIsOpenNav] = useState<boolean>(false);
 
   return (
-    <div className="flex h-full  bg-crm-dark pr-5">
-      <section className={`sidebar overflow-scroll duration-200 py-8  bg-crm-dark-300  max-w-[240px] text-crm-mutted-blue h-full ${isMinimize ? "w-[90px]" : "w-full"}`}>
+    <>
+      <section className="fixed  top-0 z-30 w-full md:hidden  sidebar overflow-scroll duration-200 p-3  bg-crm-dark-300  text-crm-mutted-blue h-[fit-content]">
         <div className="flex justify-between px-3">
           {!isMinimize && <img src={LogoFullWhite} alt="" width={170} />}
 
-          <button className={`bg-none border-0 ${isMinimize && "ml-[20px]"}`} onClick={() => setIsMinimize(!isMinimize)}>
+          <button className={`bg-none border-0 ${isMinimize && "ml-[20px]"}`} onClick={() => setIsOpenNav(!isOpenNav)}>
             <HamburgerMenuIcon />
           </button>
         </div>
+      </section>
 
-        {!isMinimize && <p className="text-crm-mutted-blue uppercase mt-8 pl-6">Menu</p>}
+      <section className={`${isOpenNav ? "left-0" : "left-[-100vw]"} w-2/3 fixed  z-50 md:hidden  sidebar overflow-scroll duration-200 p-3  bg-crm-dark-300  text-crm-mutted-blue h-[100vh]`}>
+        <img src={LogoFullWhite} alt="" width={170} />
+        <p className="text-crm-mutted-blue uppercase mt-8 pl-6">Menu</p>
 
         <DashboardNavList isMinimize={isMinimize} />
       </section>
 
-      <section className="crm-dashboard-content ml-8 w-full overflow-y-scroll">
-        <DashboardHeader />
-        {children}
-      </section>
-    </div>
+      <div className={`${!isOpenNav ? "hidden" : ""} nav-background fixed top-0 opacity-80 w-[100vw] h-[100vh] bg-crm-dark z-40`} onClick={() => setIsOpenNav(!isOpenNav)}></div>
+
+      <div className="flex h-full  bg-crm-dark pr-5 ">
+        <section className={`hidden md:block sidebar overflow-scroll duration-200 py-8  bg-crm-dark-300   text-crm-mutted-blue h-full ${isMinimize ? "w-[90px]" : "w-full"}`}>
+          <div className="flex justify-between px-3">
+            {!isMinimize && <img src={LogoFullWhite} alt="" width={170} />}
+
+            <button className={`bg-none border-0 ${isMinimize && "ml-[20px]"}`} onClick={() => setIsMinimize(!isMinimize)}>
+              <HamburgerMenuIcon />
+            </button>
+          </div>
+
+          {!isMinimize && <p className="text-crm-mutted-blue uppercase mt-8 pl-6">Menu</p>}
+
+          <DashboardNavList isMinimize={isMinimize} />
+        </section>
+
+        <section className="crm-dashboard-content mt-15 ml-8 w-full overflow-y-scroll">
+          <DashboardHeader />
+          {children}
+        </section>
+      </div>
+    </>
   );
 }
