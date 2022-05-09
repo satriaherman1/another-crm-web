@@ -4,7 +4,7 @@ import "./styles.scss";
 export default function InputWithSelect(props: ICrmInputWithSelect) {
   const { placeholder, className, style } = props;
   const [showOptLabel, setShowOptLabel] = useState<boolean>(false);
-  const selectRef = useRef(null);
+  const selectRef = useRef<HTMLSelectElement>(null);
 
   const optList = [
     {
@@ -39,7 +39,9 @@ export default function InputWithSelect(props: ICrmInputWithSelect) {
           {optList.map((opt) => (
             <li
               onClick={() => {
-                selectRef.current.value = opt.value;
+                if (selectRef.current && selectRef.current.value) {
+                  selectRef.current.value = opt.value;
+                }
                 setShowOptLabel(!showOptLabel);
               }}
               key={opt.value}
