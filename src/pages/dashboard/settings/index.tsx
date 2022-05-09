@@ -27,21 +27,21 @@ export default function Settings() {
     {
       id: 1,
       name: "Name",
-      selector: (row) => row.name,
+      selector: (row: any) => row.name,
       sortable: true,
       reorder: true,
     },
     {
       id: 2,
       name: "Email",
-      selector: (row) => row.email,
+      selector: (row: any) => row.email,
       sortable: true,
       reorder: true,
     },
     {
       id: 3,
       name: "Role",
-      selector: (row) => (
+      selector: (row: any) => (
         <button className="py-2 px-3 bg-crm-green-800 box-border text-crm-green font-semibold rounded flex items-center">
           <span>{row.role}</span> <ArrowDownOutlinedIcon className="ml-2" />
         </button>
@@ -52,7 +52,7 @@ export default function Settings() {
     {
       id: 4,
       name: "Last Active",
-      selector: (row) => row.last_active,
+      selector: (row: any) => row.last_active,
       sortable: true,
       reorder: true,
     },
