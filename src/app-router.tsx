@@ -8,6 +8,7 @@ const VerificationPage = React.lazy(() => import("./pages/verification"));
 const InvitePage = React.lazy(() => import("./pages/invite"));
 const DashboardPage = React.lazy(() => import("./pages/dashboard"));
 const OrderSummaryPage = React.lazy(() => import("./pages/order-summary"));
+const SettingsPage = React.lazy(() => import("./pages/dashboard/settings"));
 
 export default function AppRouter() {
   return (
@@ -18,7 +19,10 @@ export default function AppRouter() {
         <Route path="sign-up" element={<SignUpPage />}></Route>
         <Route path="verification" element={<VerificationPage />}></Route>
         <Route path="invite" element={<InvitePage />}></Route>
-        <Route path="dashboard" caseSensitive element={<DashboardPage />}></Route>
+        <Route path="dashboard" caseSensitive>
+          <Route index element={<DashboardPage />} />
+          <Route path="settings" element={<SettingsPage />} />
+        </Route>
         <Route path="order-summary" caseSensitive element={<OrderSummaryPage />}></Route>
       </Routes>
     </Suspense>

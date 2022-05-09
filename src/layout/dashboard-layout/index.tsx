@@ -27,8 +27,8 @@ export default function DashboardLayout(props: IDashboardLayoutProps) {
         </div>
       </section>
 
-      <section className={`${isOpenNav ? "left-0" : "left-[-100vw]"} w-2/3 fixed  z-50 md:hidden  sidebar overflow-scroll duration-200 p-3  bg-crm-dark-300  text-crm-mutted-blue h-[100vh]`}>
-        <img src={LogoFullWhite} alt="" width={170} />
+      <section className={`${isOpenNav ? "left-0" : "left-[-100vw]"} w-2/3 fixed  z-50 md:hidden  sidebar overflow-scroll duration-200 py-3  bg-crm-dark-300  text-crm-mutted-blue h-[100vh]`}>
+        <img src={LogoFullWhite} alt="" width={170} className="block mx-2" />
         <p className="text-crm-mutted-blue uppercase mt-8 pl-6">Menu</p>
 
         <DashboardNavList isMinimize={isMinimize} />
@@ -37,7 +37,7 @@ export default function DashboardLayout(props: IDashboardLayoutProps) {
       <div className={`${!isOpenNav ? "hidden" : ""} nav-background fixed top-0 opacity-80 w-[100vw] h-[100vh] bg-crm-dark z-40`} onClick={() => setIsOpenNav(!isOpenNav)}></div>
 
       <div className="flex h-full  bg-crm-dark pr-5 ">
-        <section className={`hidden md:block sidebar overflow-scroll duration-200 py-8  bg-crm-dark-300   text-crm-mutted-blue h-full ${isMinimize ? "w-[90px]" : "w-full"}`}>
+        <section className={`hidden md:block sidebar overflow-scroll duration-200 py-8  bg-crm-dark-300 max-w-[260px]  text-crm-mutted-blue h-full ${isMinimize ? "w-[90px]" : "w-full"}`}>
           <div className="flex justify-between px-3">
             {!isMinimize && <img src={LogoFullWhite} alt="" width={170} />}
 
@@ -51,7 +51,7 @@ export default function DashboardLayout(props: IDashboardLayoutProps) {
           <DashboardNavList isMinimize={isMinimize} />
         </section>
 
-        <section className="crm-dashboard-content mt-15 ml-8 w-full overflow-y-scroll">
+        <section className="crm-dashboard-content mt-15 md:mt-3 ml-8 w-full overflow-y-scroll">
           <DashboardHeader />
           {children}
         </section>

@@ -498,3 +498,52 @@ export function VideoCircleIcon(props: IconProps): ReactElement {
     </svg>
   );
 }
+
+export function SearchIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="7.82492" cy="7.82492" r="6.74142" stroke={fill ? fill : "#3C4254"} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M12.5137 12.8638L15.1567 15.4999" stroke={fill ? fill : "#3C4254"} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  );
+}
+
+export function ArrowDown(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M14.1364 11.865H9.23105H4.81388C4.058 11.865 3.68006 10.995 4.21547 10.485L8.29408 6.59999C8.9476 5.97749 10.0106 5.97749 10.6641 6.59999L12.2152 8.07749L14.7427 10.485C15.2702 10.995 14.8923 11.865 14.1364 11.865Z"
+        fill={fill ? fill : "white"}
+      />
+    </svg>
+  );
+}
+
+export function SettingDottedIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width="4" height="22" viewBox="0 0 4 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="2.08911" cy="2" r="1.5" fill={fill ? fill : "#757B8C"} />
+      <circle cx="2.08911" cy="11" r="1.5" fill={fill ? fill : "#757B8C"} />
+      <circle cx="2.08911" cy="20" r="1.5" fill={fill ? fill : "#757B8C"} />
+    </svg>
+  );
+}
+
+export function ArrowDownOutlinedIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M12.5399 5.59375L8.46489 9.66875C7.98364 10.15 7.19614 10.15 6.71489 9.66875L2.63989 5.59375"
+        stroke={fill ? fill : "#30E0A1"}
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}

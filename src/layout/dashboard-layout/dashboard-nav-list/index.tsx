@@ -101,10 +101,10 @@ export default function DashboardNavList(props: IDashboardNavListProps) {
         </NavLink>
       </li>
 
-      <li className="py-4 mt-10">
-        <NavLink to="/dashboard" className="flex">
+      <li className={`py-4 mt-10 ${activeSidebarList === "dashboard/settings" ? "navlist-active" : ""}`}>
+        <NavLink to="/dashboard/settings" className="flex">
           <SettingIcon className={`${isMinimize && "mx-auto"}`} fill="#98A5CD" />
-          {!isMinimize && <p className="ml-3 text-white">Settings</p>}
+          {!isMinimize && <p className="ml-3">Settings</p>}
         </NavLink>
       </li>
       <li className="py-4 ">
