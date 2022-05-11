@@ -3,10 +3,16 @@ import { StarIcon } from "@src/config/pathImage";
 import { NavLink } from "react-router-dom";
 
 export default function DashboardHeader() {
+  const pathName = window.location.pathname;
+  const urlPath = pathName.slice(1, pathName.length);
+  const pathArr = urlPath.split("/");
+
+  const path = pathArr[pathArr.length - 1];
+
   return (
     <div className="dashboard-head-layout  bg-crm-dark-300 flex flex-col md:flex-row md:items-center py-7 px-6 mt-4  rounded text-white">
       <div className="flex justify-between w-full md:w-[fit-content]">
-        <h1 className="font-semibold text-[24px] w-[fit-content]">Dashboard</h1>
+        <h1 className="font-semibold text-[24px] w-[fit-content] capitalize">{path}</h1>
 
         <div className="ml-auto flex md:hidden ">
           <div className="divider h-[30px] w-[2px] bg-gray-700 mx-3"></div>

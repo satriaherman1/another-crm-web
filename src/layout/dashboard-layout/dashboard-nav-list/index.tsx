@@ -14,7 +14,7 @@ import {
   UserProfileIcon,
 } from "@src/components/common/Icon";
 import { useEffect, useState } from "react";
-import { NavLink, useRoutes } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 interface IDashboardNavListProps {
   isMinimize: boolean;
@@ -29,6 +29,7 @@ export default function DashboardNavList(props: IDashboardNavListProps) {
   useEffect(() => {
     const pathName = window.location.pathname;
     const urlPath = pathName.slice(1, pathName.length);
+    console.log(urlPath);
     setActiveSidebarList(urlPath);
   }, []);
 
@@ -40,8 +41,8 @@ export default function DashboardNavList(props: IDashboardNavListProps) {
           {!isMinimize && <p className="ml-3">Dashboard</p>}
         </NavLink>
       </li>
-      <li className={`py-4 ${activeSidebarList === "account" ? "navlist-active" : ""}`}>
-        <NavLink to="/dashboard" className="flex">
+      <li className={`py-4 ${activeSidebarList === "dashboard/account" ? "navlist-active" : ""}`}>
+        <NavLink to="/dashboard/account" className="flex">
           <UserProfileIcon className={`${isMinimize && "mx-auto"}`} fill="#98A5CD" />
           {!isMinimize && <p className="ml-3">Account</p>}
         </NavLink>

@@ -1,5 +1,5 @@
 export default function Button(props: ICrmButton) {
-  const { variant, children, className, onClick } = props;
+  const { variant, children, className, onClick, paddingClassName } = props;
 
   let crmVariantBtnClass;
 
@@ -13,7 +13,7 @@ export default function Button(props: ICrmButton) {
   }
 
   return (
-    <button onClick={onClick} className={`${crmVariantBtnClass} ${className ?? ""} px-8 py-3 rounded-lg font-semibold crm-button max-w-[500px]`}>
+    <button onClick={onClick} className={`${crmVariantBtnClass} ${className ?? ""} ${paddingClassName ? paddingClassName : "px-8 py-3"}  rounded-lg font-semibold crm-button max-w-[500px]`}>
       {children}
     </button>
   );

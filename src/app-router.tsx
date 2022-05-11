@@ -9,6 +9,7 @@ const InvitePage = React.lazy(() => import("./pages/invite"));
 const DashboardPage = React.lazy(() => import("./pages/dashboard"));
 const OrderSummaryPage = React.lazy(() => import("./pages/order-summary"));
 const SettingsPage = React.lazy(() => import("./pages/dashboard/settings"));
+const AccountPage = React.lazy(() => import("./pages/dashboard/account"));
 
 export default function AppRouter() {
   return (
@@ -22,6 +23,7 @@ export default function AppRouter() {
         <Route path="dashboard" caseSensitive>
           <Route index element={<DashboardPage />} />
           <Route path="settings" element={<SettingsPage />} />
+          <Route path="account" element={<AccountPage />} />
         </Route>
         <Route path="order-summary" caseSensitive element={<OrderSummaryPage />}></Route>
       </Routes>

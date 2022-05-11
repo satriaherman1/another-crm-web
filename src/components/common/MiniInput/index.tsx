@@ -36,7 +36,7 @@ export default function MiniInput(props: ICrmInput) {
       style={style ? { ...style, ...inputStyles } : inputStyles}
       type={type}
       placeholder={placeholder ?? ""}
-      className={`${className ?? ""} ${!icon ? "px-3" : " pl-[35px] pr-[7px] "} py-[8px]  ${crmTypeClass} ${crmVariantClass} crm-mini-input  max-w-[500px] w-full`}
+      className={`${className ?? ""} ${!icon ? "px-3" : " pl-[39px] pr-[7px] "} py-[8px]  ${crmTypeClass} ${crmVariantClass} crm-mini-input  max-w-[500px] w-full`}
     />
   );
 }

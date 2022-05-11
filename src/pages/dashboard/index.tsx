@@ -17,10 +17,10 @@ export default function Dashboard() {
 
         <section className=" py-4 bg-crm-dark-300 md:w-[40%] h-[fit-content] rounded-md">
           <div className="flex">
-            <button className="p-2 rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-300">
+            <button className="p-2 rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200">
               <FilterIcon />
             </button>
-            <button className="py-2 px-3 text-white font-normal rounded-md border border-crm-gray-350 ml-2 bg-crm-gray-300">Clear Filters</button>
+            <button className="py-2 px-3 text-white font-normal rounded-md border border-crm-gray-350 ml-2 bg-crm-gray-200">Clear Filters</button>
           </div>
 
           <div className="w-full bg-crm-gray-400 mt-4 py-3 px-5 text-crm-gray border-y border-crm-gray-350">2 weeks ago</div>

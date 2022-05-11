@@ -36,6 +36,7 @@ declare interface ICrmButton {
   className?: string;
   children: any;
   onClick?: (val?: any) => any;
+  paddingClassName?: string;
 }
 
 declare interface ICrmColumns {
