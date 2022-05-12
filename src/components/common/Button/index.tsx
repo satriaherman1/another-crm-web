@@ -10,6 +10,9 @@ export default function Button(props: ICrmButton) {
     case "secondary":
       crmVariantBtnClass = "bg-crm-secondary";
       break;
+    case "blue":
+      crmVariantBtnClass = "bg-blue-500";
+      break;
   }
 
   return (

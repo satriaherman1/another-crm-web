@@ -10,6 +10,7 @@ const DashboardPage = React.lazy(() => import("./pages/dashboard"));
 const OrderSummaryPage = React.lazy(() => import("./pages/order-summary"));
 const SettingsPage = React.lazy(() => import("./pages/dashboard/settings"));
 const AccountPage = React.lazy(() => import("./pages/dashboard/account"));
+const AccountEditPage = React.lazy(() => import("./pages/dashboard/account/edit"));
 
 export default function AppRouter() {
   return (
@@ -23,7 +24,10 @@ export default function AppRouter() {
         <Route path="dashboard" caseSensitive>
           <Route index element={<DashboardPage />} />
           <Route path="settings" element={<SettingsPage />} />
-          <Route path="account" element={<AccountPage />} />
+          <Route path="account">
+            <Route index element={<AccountPage />} />
+            <Route path="edit" element={<AccountEditPage />} />
+          </Route>
         </Route>
         <Route path="order-summary" caseSensitive element={<OrderSummaryPage />}></Route>
       </Routes>

@@ -5,6 +5,7 @@ import DashboardStatistic from "@src/components/pages/dashboard/statistic";
 
 import "./styles.scss";
 import DashboardTaskList from "@src/components/pages/dashboard/task-list";
+import moment from "moment";
 
 export default function Dashboard() {
   return (
@@ -27,14 +28,14 @@ export default function Dashboard() {
 
           <DashboardActivityList
             icon={<EyeIcon />}
-            mailDate="hi"
+            mailDate="test"
             createdDate="06/01/22 04:11:05"
             content="Prospect Keith Hnaituk opened No Cod BNPL Comparison Tool Step #1 (Manual Email) of Enterprise Custom - Email Only Sequence"
             footerElement={
               <div className="acivity-list-bottom flex gap-9 px-4 mt-4 text-crm-gray-500 text-[14px] ">
                 <div className="flex items-center">
                   <MailIcon />
-                  <span className="ml-2">13 Days Ago</span>
+                  <span className="ml-2">{moment("2022/04/21 18:30:10").fromNow()}</span>
                 </div>
                 <div className="flex items-center">
                   <MonitorIcon />

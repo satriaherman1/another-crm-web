@@ -8,6 +8,7 @@ import "./styles.scss";
 import { useState } from "react";
 import Button from "@src/components/common/Button";
 import ContactInfoBox from "@src/components/pages/dashboard/account/contact-info-box";
+import AccountInfoBox from "@src/components/pages/dashboard/account/account-info-box";
 
 export default function Account() {
   const [activeTab, setActiveTab] = useState<string>("account");
@@ -96,8 +97,8 @@ export default function Account() {
 
   return (
     <DashboardLayout>
-      <div className="flex gap-x-5 lg:justify-between lg:gap-0 order-1 flex-wrap lg:flex-row  mt-6 ">
-        <div className="flex flex-col max-w-[300px]">
+      <div className="flex lg:gap-x-2 lg:justify-between lg:gap-0 order-1 flex-wrap   mt-6 ">
+        <div className="flex flex-col max-w-[270px]">
           <div className="bg-crm-dark-300 px-8 py-5 text-white rounded-md">Hello Everyone Im Siri !</div>
           <div className="bg-crm-dark-300 px-8 py-5 text-white rounded-md mt-4">
             New Task
@@ -111,7 +112,7 @@ export default function Account() {
           </div>
         </div>
 
-        <div className="flex flex-col order-last lg:order-2 max-w-[600px]">
+        <div className="flex flex-col order-last lg:order-2 max-w-[580px]">
           <div className="flex justify-between items-center">
             <MiniInput type="text" variant="crm-gray" placeholder="Search by name or email" icon={SearchIcon} className="max-w-[300px] mb-4" />
           </div>
@@ -126,11 +127,11 @@ export default function Account() {
               </button>
             </div>
 
-            <CrmDatatable data={data} columns={columns} className="mx-1 border-0" />
+            <CrmDatatable data={data} columns={columns} className="mx-1 border-0" pagination />
           </div>
         </div>
 
-        <div className="min-w-[200px] lg:order-last text-white">
+        <div className="min-w-[250px] lg:order-last text-white">
           <div className="w-[fit-content] ml-auto">
             <Button variant="primary" className="h-[fit-content]" paddingClassName="p-2">
               <AddIcon />
@@ -140,7 +141,23 @@ export default function Account() {
             </button>
           </div>
 
-          <ContactInfoBox zip={59452} city="Austin" username="Ailee Studio" email="ailee@gmail.com" phone="+91 72266181" website="aileestudio.com" />
+          {activeTab === "account" ? (
+            <AccountInfoBox
+              facebookUrl="https://facebook.com"
+              instagramUrl="https://instagram.com"
+              tiktokUrl="https://tiktok.com"
+              twitterUrl="https://twiiter.com"
+              linkedinUrl="https://linkeding.com"
+              zip={59452}
+              city="Austin"
+              username="Ailee Studio"
+              email="ailee@gmail.com"
+              phone="+91 72266181"
+              website="aileestudio.com"
+            />
+          ) : (
+            <ContactInfoBox zip={59452} city="Austin" username="Ailee Studio" email="ailee@gmail.com" phone="+91 72266181" website="aileestudio.com" />
+          )}
         </div>
       </div>
     </DashboardLayout>

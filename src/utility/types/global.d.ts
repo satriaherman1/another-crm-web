@@ -1,10 +1,24 @@
 declare interface ICrmInput {
+  id?: string;
+  name?: any;
   type: "text" | "email" | "password" | "url" | "number";
   className?: string;
   placeholder?: string;
   icon?: any;
   style?: any;
   variant?: "crm-gray" | "crm-primary";
+  value?: any;
+}
+declare interface ICrmTextarea {
+  id?: string;
+  name?: any;
+  className?: string;
+  placeholder?: string;
+  icon?: any;
+  style?: any;
+  variant?: "crm-gray" | "crm-primary";
+  value?: any;
+  rows?: number;
 }
 declare interface ICrmInputWithSelect {
   className?: string;
@@ -31,7 +45,7 @@ declare interface ICrmDatatableColumn {
   reorder: boolean;
 }
 declare interface ICrmButton {
-  variant: "primary" | "secondary";
+  variant: "primary" | "secondary" | "blue";
   type?: "button" | "submit";
   className?: string;
   children: any;

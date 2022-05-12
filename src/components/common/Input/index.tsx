@@ -1,7 +1,7 @@
 import "./styles.scss";
 
 export default function Input(props: ICrmInput) {
-  const { type, placeholder, icon, className, style } = props;
+  const { type, name, id, placeholder, icon, className, style } = props;
 
   let crmTypeClass;
 
@@ -24,6 +24,8 @@ export default function Input(props: ICrmInput) {
     <input
       style={style ? { ...style, ...inputStyles } : inputStyles}
       type={type}
+      name={name ?? ""}
+      id={id ?? ""}
       placeholder={placeholder ?? ""}
       className={`${className ?? ""} ${!icon ? "px-5" : " pl-[48px] pr-[7px] "} py-[15px]  ${crmTypeClass} crm-input mt-3 max-w-[500px]`}
     />
