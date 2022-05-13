@@ -27,6 +27,7 @@ h2 {
   line-height: 200%;
 }
 
-.txt-crm-primary {
-  @apply text-crm-primary;
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }

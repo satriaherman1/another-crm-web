@@ -1,7 +1,7 @@
 declare interface ICrmInput {
   id?: string;
   name?: any;
-  type: "text" | "email" | "password" | "url" | "number";
+  type: "text" | "email" | "password" | "url" | "number" | "search";
   className?: string;
   placeholder?: string;
   icon?: any;
@@ -51,6 +51,19 @@ declare interface ICrmButton {
   children: any;
   onClick?: (val?: any) => any;
   paddingClassName?: string;
+}
+declare interface ICrmDropdown {
+  variant: "primary" | "outlined" | "blue";
+  optList: dropDownOptList[];
+  className?: string;
+  onClick?: (val?: any) => any;
+  onChange?: (val?: any) => any;
+  paddingClassName?: string;
+}
+
+interface dropDownOptList {
+  value: any;
+  label: any;
 }
 
 declare interface ICrmColumns {

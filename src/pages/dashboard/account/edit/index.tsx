@@ -1,9 +1,16 @@
 import Button from "@src/components/common/Button";
+import Dropdown from "@src/components/common/Dropdown";
 import Input from "@src/components/common/Input";
 import TextArea from "@src/components/common/Textarea";
 import DashboardLayout from "@src/layout/dashboard-layout";
 
 export default function Account() {
+  const optList = [
+    {
+      label: "test",
+      value: "test",
+    },
+  ];
   return (
     <DashboardLayout>
       <div className="bg-crm-dark-300 px-5 py-6 mt-5 text-white flex justify-between">
@@ -37,6 +44,10 @@ export default function Account() {
           <section className="mt-5">
             <label htmlFor="customField">Custom Field</label>
             <Input type="text" id="customField" placeholder="custom" className="block py-2 w-full" />
+          </section>
+          <section className="mt-5">
+            <label htmlFor="customField">Account</label>
+            <Dropdown className="w-full mt-3" variant="outlined" optList={optList} />
           </section>
 
           <section className="flex mt-5">
