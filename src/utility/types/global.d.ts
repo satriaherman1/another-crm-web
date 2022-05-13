@@ -54,7 +54,10 @@ declare interface ICrmButton {
 }
 declare interface ICrmDropdown {
   variant: "primary" | "outlined" | "blue";
+  id?: any;
+  name?: any;
   optList: dropDownOptList[];
+  placeholder?: string;
   className?: string;
   onClick?: (val?: any) => any;
   onChange?: (val?: any) => any;

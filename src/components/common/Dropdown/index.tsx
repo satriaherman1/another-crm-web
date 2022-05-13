@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import "./styles.scss";
 
 export default function Dropdown(props: ICrmDropdown) {
-  const { className, optList, onClick, variant, onChange, paddingClassName } = props;
+  const { className, optList, onClick, variant, onChange, paddingClassName, id, name } = props;
   const [showOptLabel, setShowOptLabel] = useState<boolean>(false);
   const selectRef = useRef<HTMLSelectElement>(null);
 
@@ -20,7 +20,7 @@ export default function Dropdown(props: ICrmDropdown) {
 
   return (
     <div className={`relative crm-dropdown max-w-[500px] ${className ?? ""}`}>
-      <select onClick={() => handleClickDropdown()} ref={selectRef} className={`${dropdownVariantClass}  py-2 px-3`} name="" id="">
+      <select id={id ?? ""} name={name ?? ""} onClick={() => handleClickDropdown()} ref={selectRef} className={`${dropdownVariantClass}  py-2 px-3`}>
         {optList.map((opt) => (
           <option key={opt.value} value={opt.value}>
             {opt.label}

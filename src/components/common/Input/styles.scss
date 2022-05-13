@@ -14,4 +14,15 @@ $inputPrimary: #0ec8ce;
   &:focus {
     border: 2px solid $inputPrimary;
   }
+
+  &::-webkit-search-cancel-button {
+    position: relative;
+
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    background-image: url("/src/assets/icons/dashboard/close-circle.svg");
+    background-repeat: no-repeat;
+  }
 }

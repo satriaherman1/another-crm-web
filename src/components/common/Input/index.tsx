@@ -15,10 +15,12 @@ export default function Input(props: ICrmInput) {
   }
 
   const inputStyles = {
-    background: `url(${icon})`,
+    backgroundImage: `url(${icon})`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "3% 47%",
   };
+
+  console.log(inputStyles, icon);
 
   return (
     <input
