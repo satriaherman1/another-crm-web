@@ -45,7 +45,7 @@ declare interface ICrmDatatableColumn {
   reorder: boolean;
 }
 declare interface ICrmButton {
-  variant: "primary" | "secondary" | "blue";
+  variant: "primary" | "secondary" | "blue" | "dark";
   type?: "button" | "submit";
   className?: string;
   children: any;

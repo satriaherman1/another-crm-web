@@ -1,4 +1,4 @@
-import "windi.css";
+import "virtual:windi.css";
 import AppRouter from "./app-router";
 
 function App() {

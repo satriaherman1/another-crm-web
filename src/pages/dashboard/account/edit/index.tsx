@@ -1,11 +1,14 @@
 import Button from "@src/components/common/Button";
 import Dropdown from "@src/components/common/Dropdown";
 import Input from "@src/components/common/Input";
+import CrmNotification from "@src/components/common/Notification";
 import TextArea from "@src/components/common/Textarea";
 import { MailIcon, MobileIcon } from "@src/config/pathImage";
 import DashboardLayout from "@src/layout/dashboard-layout";
+import { useState } from "react";
 
 export default function Account() {
+  const [showNotif, setShowNotif] = useState<boolean>(true);
   const optList = [
     {
       label: "test",
@@ -28,7 +31,7 @@ export default function Account() {
               <label htmlFor="firstName">First Name</label>
               <Input type="text" id="firstName" placeholder="first name" className="block py-2 w-full" />
             </section>
-            <section>
+            <section className="mt-3 md:mt-0">
               <label htmlFor="lastName">Last Name</label>
               <Input type="text" id="lastName" placeholder="last name" className="block py-2 w-full" />
             </section>
@@ -107,6 +110,12 @@ export default function Account() {
           </section>
         </div>
       </div>
+      <CrmNotification
+        visible={showNotif}
+        onClose={() => setShowNotif(false)}
+        title="Register Notification"
+        message="An email has been sent to your for verification! Please verify your account from there."
+      />
     </DashboardLayout>
   );
 }

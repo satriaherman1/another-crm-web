@@ -11,7 +11,10 @@ export default function Button(props: ICrmButton) {
       crmVariantBtnClass = "bg-crm-secondary";
       break;
     case "blue":
-      crmVariantBtnClass = "bg-blue-500";
+      crmVariantBtnClass = "bg-blue-500 text-white";
+      break;
+    case "dark":
+      crmVariantBtnClass = "bg-crm-dark text-white";
       break;
   }
 
