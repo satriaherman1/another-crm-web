@@ -17,7 +17,7 @@ export default function Input(props: ICrmInput) {
   const inputStyles = {
     backgroundImage: `url(${icon})`,
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "3% 47%",
+    backgroundPosition: "12px 47%",
   };
 
   console.log(inputStyles, icon);
