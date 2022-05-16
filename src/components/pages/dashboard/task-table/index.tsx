@@ -6,26 +6,29 @@ interface ICrmTableProps {
   columns: ICrmColumns[];
   rows: ICrmRows[];
   className?: string;
+  head: boolean;
 }
 
 export default function DashboardTaskTable(props: ICrmTableProps) {
-  const { className, columns, rows } = props;
+  const { className, columns, rows, head } = props;
   return (
     <div className="overflow-x-scroll py-8 ">
-      <section className="flex justify-between w-full gap-10 items-center">
-        <div className="flex ml-2 whitespace-nowrap">
-          <Checkbox />
-          <p className="text-white ml-4 w-[fit-content]">Upcoming Task</p>
-        </div>
-        <div className="flex items-center whitespace-nowrap">
-          <p className="text-crm-mutted-blue">Sort By:</p>
-          <InputRadio className="ml-3 " name="sort" label="Priority" />
-          <InputRadio className="ml-2" name="sort" label="Prospec Engagement" />
-        </div>
-        <Button variant="primary" className="whitespace-nowrap ml-5">
-          Start 4 Task
-        </Button>
-      </section>
+      {head && (
+        <section className="flex justify-between w-full gap-10 items-center">
+          <div className="flex ml-2 whitespace-nowrap">
+            <Checkbox />
+            <p className="text-white ml-4 w-[fit-content]">Upcoming Task</p>
+          </div>
+          <div className="flex items-center whitespace-nowrap">
+            <p className="text-crm-mutted-blue">Sort By:</p>
+            <InputRadio className="ml-3 " name="sort" label="Priority" />
+            <InputRadio className="ml-2" name="sort" label="Prospec Engagement" />
+          </div>
+          <Button variant="primary" className="whitespace-nowrap ml-5">
+            Start 4 Task
+          </Button>
+        </section>
+      )}
 
       <section className="flex my-4 border-b border-crm-gray-350">
         <div className="flex items-center py-2 px-3 border-r border-crm-gray-400">

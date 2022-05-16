@@ -152,7 +152,7 @@ export default function DashboardTaskList() {
   ];
   return (
     <section className="text-white mt-5 mb-9 basis-[58%] overflow-y-hidden bg-crm-dark-300 text-white w-full px-5 py-3 rounded-md">
-      <DashboardTaskTable rows={rows} columns={columns} className="bg-transparent" />
+      <DashboardTaskTable head rows={rows} columns={columns} className="bg-transparent" />
     </section>
   );
 }

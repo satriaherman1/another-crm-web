@@ -11,7 +11,7 @@ const OrderSummaryPage = React.lazy(() => import("./pages/order-summary"));
 const SettingsPage = React.lazy(() => import("./pages/dashboard/settings"));
 const AccountPage = React.lazy(() => import("./pages/dashboard/account"));
 const AccountEditPage = React.lazy(() => import("./pages/dashboard/account/edit"));
-const ActivityPage = React.lazy(() => import("./pages/dashboard/activity"));
+const TaskPage = React.lazy(() => import("./pages/dashboard/task"));
 
 export default function AppRouter() {
   return (
@@ -25,7 +25,7 @@ export default function AppRouter() {
         <Route path="dashboard" caseSensitive>
           <Route index element={<DashboardPage />} />
           <Route path="settings" element={<SettingsPage />} />
-          <Route path="activity" element={<ActivityPage />} />
+          <Route path="task" element={<TaskPage />} />
           <Route path="account">
             <Route index element={<AccountPage />} />
             <Route path="edit" element={<AccountEditPage />} />

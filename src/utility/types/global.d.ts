@@ -83,3 +83,18 @@ interface ICrmRowsValue {
   field: string;
   value: React.ReactElement | string;
 }
+
+declare interface ITaskTableColumn {
+  difficulty: string;
+  content: string;
+}
+declare interface IInitialNameTableColumn {
+  fullName: string;
+}
+declare interface INameTableColumn {
+  name: string;
+  position: string;
+}
+declare interface IDueDateTableColumn {
+  dueDate: string;
+}
