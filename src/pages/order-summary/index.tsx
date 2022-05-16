@@ -4,6 +4,7 @@ import BillCheckbox from "@src/components/pages/order-summary/bill-checkbox";
 import OrderSummaryPaymentForm from "@src/components/pages/order-summary/payment-form";
 import { AmericanExpressLogo, MasterCardLogo, VisaLogo } from "@src/config/pathImage";
 import OrderSummaryOrderFeature from "@src/components/pages/order-summary/order-feature";
+import Dropdown from "@src/components/common/Dropdown";
 
 export default function OrderSummary() {
   const [fullName, setFullName] = useState<string>("Jordan Olivas");
@@ -21,6 +22,17 @@ export default function OrderSummary() {
     setTimeout(() => setInitialName(initial), 200);
   }, []);
 
+  const billingList = [
+    {
+      label: "intro",
+      value: "intro",
+    },
+    {
+      label: "unlimited",
+      value: "unlimited",
+    },
+  ];
+
   return (
     <div className="flex flex-col md:flex-row bg-crm-dark h-full overflow-y-scroll">
       <section className="text-white md:overflow-y-scroll  px-6 py-12 md:pl-[10%] md:pr-14 md:pt-17">
@@ -34,7 +46,10 @@ export default function OrderSummary() {
 
         <hr className="my-8 bg-crm-gray-600 opacity-40" />
 
-        <p className="text-[20px]">Billing Plan</p>
+        <div className="flex gap-x-3 items-center">
+          <p className="text-[20px]">Billing Plan</p>
+          <Dropdown borderVariantClass="border border-[#757b8c]" optList={billingList} variant="outlined" className="bg-crm-gray-200 border-crm-gray-350 text-white font-normal rounded-md" />
+        </div>
 
         <div className="flex flex-col md:pl-0 md:flex-row mt-4 gap-8">
           <BillCheckbox

@@ -255,17 +255,18 @@ export default function Task() {
     <DashboardLayout>
       <div className="py-4 px-6 bg-crm-dark-300 mt-3 flex flex-col lg:flex-row gap-7">
         <section>
-          <div className="flex  gap-x-4 items-center">
+          <div className="flex gap-x-4 items-center">
             <button className="py-2 px-3 text-white font-normal rounded-md border border-crm-gray-350 ml-2 bg-crm-gray-200">View & Filters</button>
             <Dropdown
               variant="outlined"
+              borderVariantClass="border border-[#757b8c]"
               optList={[
                 {
                   label: "test",
                   value: "test",
                 },
               ]}
-              className="w-[80px] bg-crm-gray-200 text-white font-normal rounded-md "
+              className="w-[80px] bg-crm-gray-200 text-white font-normal rounded-md border-crm-gray-350"
             />
           </div>
           <div className="mt-4">

@@ -62,6 +62,7 @@ declare interface ICrmDropdown {
   onClick?: (val?: any) => any;
   onChange?: (val?: any) => any;
   paddingClassName?: string;
+  borderVariantClass?: string;
 }
 
 interface dropDownOptList {
