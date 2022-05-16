@@ -43,7 +43,7 @@ export default function DashboardNavList(props: IDashboardNavListProps) {
       </li>
       <li className={`py-4 ${activeSidebarList === "dashboard/account" ? "navlist-active" : ""}`}>
         <NavLink to="/dashboard/account" className="flex">
-          <UserProfileIcon className={`${isMinimize && "mx-auto"}`} fill="#98A5CD" />
+          <UserProfileIcon className={`${isMinimize && "mx-auto"}`} fill={activeSidebarList === "dashboard/account" ? "#0EC8CE" : ""} />
           {!isMinimize && <p className="ml-3">Account</p>}
         </NavLink>
       </li>

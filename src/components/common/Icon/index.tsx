@@ -683,3 +683,13 @@ export function NotificationBing(props: IconProps): ReactElement {
     </svg>
   );
 }
+
+export function CloseIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4.74268 4.75736L13.228 13.2426" stroke={fill ? fill : "#0EC8CE"} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M13.2279 4.75736L4.74262 13.2426" stroke={fill ? fill : "#0EC8CE"} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  );
+}
