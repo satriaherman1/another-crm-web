@@ -8,6 +8,7 @@ declare interface ICrmInput {
   style?: any;
   variant?: "crm-gray" | "crm-primary";
   value?: any;
+  isNoMaxWidth?: boolean;
 }
 declare interface ICrmTextarea {
   id?: string;

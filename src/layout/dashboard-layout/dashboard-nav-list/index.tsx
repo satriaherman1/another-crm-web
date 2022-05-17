@@ -41,9 +41,9 @@ export default function DashboardNavList(props: IDashboardNavListProps) {
           {!isMinimize && <p className="ml-3">Dashboard</p>}
         </NavLink>
       </li>
-      <li className={`py-4 ${activeSidebarList === "dashboard/account" ? "navlist-active" : ""}`}>
+      <li className={`py-4 ${/account/i.test(activeSidebarList) ? "navlist-active" : ""}`}>
         <NavLink to="/dashboard/account" className="flex">
-          <UserProfileIcon className={`${isMinimize && "mx-auto"}`} fill={activeSidebarList === "dashboard/account" ? "#0EC8CE" : ""} />
+          <UserProfileIcon className={`${isMinimize && "mx-auto"}`} fill={/account/i.test(activeSidebarList) ? "#0EC8CE" : ""} />
           {!isMinimize && <p className="ml-3">Account</p>}
         </NavLink>
       </li>
@@ -89,9 +89,9 @@ export default function DashboardNavList(props: IDashboardNavListProps) {
           {!isMinimize && <p className="ml-3">Leads</p>}
         </NavLink>
       </li>
-      <li className={`py-4 ${activeSidebarList === "task" ? "navlist-active" : ""}`}>
+      <li className={`py-4 ${/task/i.test(activeSidebarList) ? "navlist-active" : ""}`}>
         <NavLink to="/dashboard/task" className="flex">
-          <NoteIcon className={`${isMinimize && "mx-auto"}`} />
+          <NoteIcon className={`${isMinimize && "mx-auto"}`} fill={/task/i.test(activeSidebarList) ? "#0EC8CE" : ""} />
           {!isMinimize && <p className="ml-3">Task</p>}
         </NavLink>
       </li>
