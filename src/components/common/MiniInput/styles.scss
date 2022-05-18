@@ -9,6 +9,13 @@ $inputPrimary: #0ec8ce;
   &.crm-mini-input-gray {
     @apply bg-crm-gray-200 border border-crm-gray-300 text-crm-mutted-blue;
   }
+  &.crm-mini-input-transparent {
+    @apply bg-transparent border border-crm-gray-600 text-crm-white;
+
+    &:focus {
+      @apply border-white;
+    }
+  }
 
   &:focus {
     @apply border-crm-mutted-blue;

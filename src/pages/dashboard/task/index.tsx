@@ -1,5 +1,6 @@
 import Button from "@src/components/common/Button";
 import Dropdown from "@src/components/common/Dropdown";
+import FilterTab from "@src/components/common/FilterTab";
 import { CloseIcon, EyeIcon, MailIcon, MonitorIcon, SendIcon, TickCircleIcon, VideoCircleIcon } from "@src/components/common/Icon";
 import MiniInput from "@src/components/common/MiniInput";
 import DashboardActivityList from "@src/components/pages/dashboard/activity-list";
@@ -15,7 +16,7 @@ import "./styles.scss";
 
 export default function Task() {
   const [activeTaskTab, setActiveTaskTab] = useState<string>("task");
-  const [activeTaskFilterTab, setActiveTaskFilterTab] = useState<string>();
+  const [activeTaskFilterTab, setActiveTaskFilterTab] = useState<string>("smart views");
 
   const formatService = new FormatService();
 
@@ -251,6 +252,19 @@ export default function Task() {
     },
   ];
 
+  const activityTaskButton: ITabFilterButton[] = [
+    {
+      key: "smart views",
+      activeIndicator: activeTaskFilterTab,
+      onClick: () => setActiveTaskFilterTab("smart views"),
+    },
+    {
+      key: "smart views",
+      activeIndicator: activeTaskFilterTab,
+      onClick: () => setActiveTaskFilterTab("smart views"),
+    },
+  ];
+
   return (
     <DashboardLayout>
       <div className="py-4 px-6 bg-crm-dark-300 mt-3 flex flex-col lg:flex-row gap-7">
@@ -270,14 +284,17 @@ export default function Task() {
             />
           </div>
           <div className="mt-4">
-            <div className="activity-task-tab flex text-crm-gray-600 w-full ">
+            {/* <div className="activity-task-tab flex text-crm-gray-600 w-full ">
               <button onClick={() => setActiveTaskFilterTab("smart_views")} className={`bg-none whitespace-nowrap py-3 px-3 ${activeTaskFilterTab === "smart_views" && "active"}`}>
                 Smart Views
               </button>
               <button onClick={() => setActiveTaskFilterTab("sort&filters")} className={`bg-none whitespace-nowrap py-3 px-3  ml-5 ${activeTaskFilterTab === "sort&filters" && "active"}`}>
                 Sort & Filters
               </button>
-            </div>
+
+            </div> */}
+
+            <FilterTab tabButton={activityTaskButton} />
             <MiniInput className="mt-3" icon={SearchIcon} placeholder="Type to search..." variant="crm-gray" type="text" />
 
             <div className="search-content h-[52vh] flex flex-col items-center justify-center">

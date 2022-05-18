@@ -6,7 +6,7 @@ declare interface ICrmInput {
   placeholder?: string;
   icon?: any;
   style?: any;
-  variant?: "crm-gray" | "crm-primary";
+  variant?: "crm-gray" | "crm-primary" | "crm-transparent";
   value?: any;
   isNoMaxWidth?: boolean;
 }
@@ -46,7 +46,7 @@ declare interface ICrmDatatableColumn {
   reorder: boolean;
 }
 declare interface ICrmButton {
-  variant: "primary" | "secondary" | "blue" | "dark";
+  variant: "primary" | "secondary" | "blue" | "dark" | "yellow";
   type?: "button" | "submit";
   className?: string;
   children: any;
@@ -99,4 +99,14 @@ declare interface INameTableColumn {
 }
 declare interface IDueDateTableColumn {
   dueDate: string;
+}
+
+declare interface ITabFilter {
+  tabButton: ITabFilterButton[];
+}
+
+declare interface ITabFilterButton {
+  onClick?: () => any;
+  activeIndicator: string;
+  key: string;
 }

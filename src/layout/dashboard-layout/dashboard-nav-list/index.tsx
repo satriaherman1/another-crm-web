@@ -77,9 +77,9 @@ export default function DashboardNavList(props: IDashboardNavListProps) {
           {!isMinimize && <p className="ml-3">Sequences</p>}
         </NavLink>
       </li>
-      <li className={`py-4 ${activeSidebarList === "schedules" ? "navlist-active" : ""}`}>
-        <NavLink to="/dashboard" className="flex">
-          <Calendar2Icon className={`${isMinimize && "mx-auto"}`} />
+      <li className={`py-4 ${/schedules/i.test(activeSidebarList) ? "navlist-active" : ""}`}>
+        <NavLink to="/dashboard/schedules" className="flex">
+          <Calendar2Icon className={`${isMinimize && "mx-auto"}`} fill={/schedules/i.test(activeSidebarList) ? "#0EC8CE" : ""} />
           {!isMinimize && <p className="ml-3">Schedules</p>}
         </NavLink>
       </li>
