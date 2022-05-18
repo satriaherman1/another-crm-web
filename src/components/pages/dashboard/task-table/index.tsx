@@ -7,14 +7,15 @@ interface ICrmTableProps {
   rows: ICrmRows[];
   className?: string;
   head: boolean;
+  heading: any;
 }
 
 export default function DashboardTaskTable(props: ICrmTableProps) {
-  const { className, columns, rows, head } = props;
+  const { className, columns, rows, head, heading } = props;
   return (
-    <div className="overflow-x-scroll py-8 ">
+    <div className={` overflow-x-scroll  `}>
       {head && (
-        <section className="flex justify-between w-full gap-10 items-center">
+        <section className="flex justify-between w-full pt-4 gap-10 items-center">
           <div className="flex ml-2 whitespace-nowrap">
             <Checkbox />
             <p className="text-white ml-4 w-[fit-content]">Upcoming Task</p>
@@ -30,20 +31,7 @@ export default function DashboardTaskTable(props: ICrmTableProps) {
         </section>
       )}
 
-      <section className="flex my-4 border-b border-crm-gray-350">
-        <div className="flex items-center py-2 px-3 border-r border-crm-gray-400">
-          <h3 className="text-crm-primary text-[32px] font-semibold">4</h3>
-          <p className="ml-3 text-crm-gray-600">Total</p>
-        </div>
-        <div className="flex items-center py-2 px-3 border-r border-crm-gray-400">
-          <h3 className="text-[32px] font-semibold">3</h3>
-          <p className="ml-3 text-crm-gray-600">Email</p>
-        </div>
-        <div className="flex items-center py-2 px-3 border-r border-crm-gray-400">
-          <h3 className="text-[32px] font-semibold">1</h3>
-          <p className="ml-3 text-crm-gray-600">Linkedin</p>
-        </div>
-      </section>
+      <section className="flex my-4 border-b border-crm-gray-350">{heading}</section>
 
       <table className={`${className ?? ""}  min-w-full relative block  dark:divide-gray-700 `}>
         <thead className="bg-gray-100 dark:bg-gray-700">

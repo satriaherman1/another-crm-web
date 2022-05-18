@@ -85,7 +85,7 @@ export default function Schedules() {
 
         <section className="flex flex-col lg:flex-row lg:items-center gap-y-3 lg:w-[fit-content] rounded-lg gap-4 py-2 px-3 border border-crm-gray-300 mt-6 lg:min-w-[820px] lg:justify-between">
           <h5 className="text-white">Thursday : 12:00am - 12:00pm</h5>
-          <div className="flex flex-wrap flex-col md:flex-row">
+          <div className="flex flex-wrap gap-4 flex-col md:flex-row">
             <Dropdown variant="outlined" className="min-w-[200px]" borderVariantClass="border border-crm-gray-170" optList={scheduleList} />
             <Dropdown variant="outlined" className="min-w-[200px]" borderVariantClass="border border-crm-gray-170" optList={scheduleList} />
             <Button variant="blue" paddingClassName="py-2 px-5">
@@ -126,6 +126,12 @@ export default function Schedules() {
             </Button>
           </div>
         </section>
+
+        <div className="lg:max-w-[820px] mt-7">
+          <Button variant="primary" className=" ml-auto block">
+            Submit
+          </Button>
+        </div>
       </div>
     </DashboardLayout>
   );

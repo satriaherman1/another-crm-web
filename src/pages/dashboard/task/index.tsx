@@ -1,7 +1,7 @@
 import Button from "@src/components/common/Button";
 import Dropdown from "@src/components/common/Dropdown";
 import FilterTab from "@src/components/common/FilterTab";
-import { CloseIcon, EyeIcon, MailIcon, MonitorIcon, SendIcon, TickCircleIcon, VideoCircleIcon } from "@src/components/common/Icon";
+import { AddIcon, CloseIcon, EyeIcon, MailIcon, MonitorIcon, MoreIcon, SendIcon, TickCircleIcon, VideoCircleIcon } from "@src/components/common/Icon";
 import MiniInput from "@src/components/common/MiniInput";
 import DashboardActivityList from "@src/components/pages/dashboard/activity-list";
 import DashboardTaskList from "@src/components/pages/dashboard/task-list";
@@ -77,6 +77,10 @@ export default function Task() {
       field: "dueDate",
       display: false,
     },
+    {
+      field: "action",
+      display: false,
+    },
   ];
 
   const rows: ICrmRows[] = [
@@ -112,73 +116,13 @@ export default function Task() {
           field: "dueDate",
           value: <DueDateColumn dueDate="2022-04-07" />,
         },
-      ],
-    },
-    {
-      id: 2,
-      value: [
         {
-          field: "image",
-          value: <ImageColumnTable />,
-        },
-        {
-          field: "name",
-          value: <NameColumnTable name="satria herman" position="Founder & CTO" />,
-        },
-        {
-          field: "task",
+          field: "action",
           value: (
-            <TaskColumnTable
-              difficulty="normal"
-              content={formatService.truncate(
-                `Deliver : <span class="text-crm-primary">Prospect Keith L</span> for
-              <span class="txt-crm-primary">Tool Step #1 (Manual Email)</span> of <span class="text-crm-primary">Enterprise Custom - Email</span>"`,
-                190
-              )}
-            />
+            <button className="ml-3">
+              <MoreIcon />
+            </button>
           ),
-        },
-        {
-          field: "initialName",
-          value: <InitialName fullName="Satria Herman" />,
-        },
-        {
-          field: "dueDate",
-          value: <DueDateColumn dueDate="2022-04-02" />,
-        },
-      ],
-    },
-    {
-      id: 2,
-      value: [
-        {
-          field: "image",
-          value: <ImageColumnTable />,
-        },
-        {
-          field: "name",
-          value: <NameColumnTable name="satria herman" position="Founder & CTO" />,
-        },
-        {
-          field: "task",
-          value: (
-            <TaskColumnTable
-              difficulty="normal"
-              content={formatService.truncate(
-                `Deliver : <span class="text-crm-primary">Prospect Keith L</span> for
-              <span class="txt-crm-primary">Tool Step #1 (Manual Email)</span> of <span class="text-crm-primary">Enterprise Custom - Email</span>"`,
-                190
-              )}
-            />
-          ),
-        },
-        {
-          field: "initialName",
-          value: <InitialName fullName="Satria Herman" />,
-        },
-        {
-          field: "dueDate",
-          value: <DueDateColumn dueDate="2022-04-02" />,
         },
       ],
     },
@@ -214,10 +158,18 @@ export default function Task() {
           field: "dueDate",
           value: <DueDateColumn dueDate="2022-04-02" />,
         },
+        {
+          field: "action",
+          value: (
+            <button className="ml-3">
+              <MoreIcon />
+            </button>
+          ),
+        },
       ],
     },
     {
-      id: 2,
+      id: 3,
       value: [
         {
           field: "image",
@@ -247,6 +199,98 @@ export default function Task() {
         {
           field: "dueDate",
           value: <DueDateColumn dueDate="2022-04-02" />,
+        },
+        {
+          field: "action",
+          value: (
+            <button className="ml-3">
+              <MoreIcon />
+            </button>
+          ),
+        },
+      ],
+    },
+    {
+      id: 4,
+      value: [
+        {
+          field: "image",
+          value: <ImageColumnTable />,
+        },
+        {
+          field: "name",
+          value: <NameColumnTable name="satria herman" position="Founder & CTO" />,
+        },
+        {
+          field: "task",
+          value: (
+            <TaskColumnTable
+              difficulty="normal"
+              content={formatService.truncate(
+                `Deliver : <span class="text-crm-primary">Prospect Keith L</span> for
+              <span class="txt-crm-primary">Tool Step #1 (Manual Email)</span> of <span class="text-crm-primary">Enterprise Custom - Email</span>"`,
+                190
+              )}
+            />
+          ),
+        },
+        {
+          field: "initialName",
+          value: <InitialName fullName="Satria Herman" />,
+        },
+        {
+          field: "dueDate",
+          value: <DueDateColumn dueDate="2022-04-02" />,
+        },
+        {
+          field: "action",
+          value: (
+            <button className="ml-3">
+              <MoreIcon />
+            </button>
+          ),
+        },
+      ],
+    },
+    {
+      id: 5,
+      value: [
+        {
+          field: "image",
+          value: <ImageColumnTable />,
+        },
+        {
+          field: "name",
+          value: <NameColumnTable name="satria herman" position="Founder & CTO" />,
+        },
+        {
+          field: "task",
+          value: (
+            <TaskColumnTable
+              difficulty="normal"
+              content={formatService.truncate(
+                `Deliver : <span class="text-crm-primary">Prospect Keith L</span> for
+              <span class="txt-crm-primary">Tool Step #1 (Manual Email)</span> of <span class="text-crm-primary">Enterprise Custom - Email</span>"`,
+                190
+              )}
+            />
+          ),
+        },
+        {
+          field: "initialName",
+          value: <InitialName fullName="Satria Herman" />,
+        },
+        {
+          field: "dueDate",
+          value: <DueDateColumn dueDate="2022-04-02" />,
+        },
+        {
+          field: "action",
+          value: (
+            <button className="ml-3">
+              <MoreIcon />
+            </button>
+          ),
         },
       ],
     },
@@ -259,11 +303,34 @@ export default function Task() {
       onClick: () => setActiveTaskFilterTab("smart views"),
     },
     {
-      key: "smart views",
+      key: "sort&filters",
       activeIndicator: activeTaskFilterTab,
-      onClick: () => setActiveTaskFilterTab("smart views"),
+      onClick: () => setActiveTaskFilterTab("sort&filters"),
     },
   ];
+
+  const TaskHeading = () => {
+    return (
+      <>
+        <div className="flex items-center py-2 px-3 border-r border-crm-gray-400">
+          <h3 className="text-white text-[32px] font-semibold">56</h3>
+          <p className="ml-3 text-crm-gray-600">Total</p>
+        </div>
+        <div className="flex items-center py-2 px-3 border-r border-crm-gray-400">
+          <h3 className="text-[32px] font-semibold text-white">34</h3>
+          <p className="ml-3 text-crm-gray-600">Call</p>
+        </div>
+        <div className="flex items-center py-2 px-3 border-r border-crm-gray-400">
+          <h3 className="text-[32px] font-semibold text-white">23 </h3>
+          <p className="ml-3 text-crm-gray-600">Email</p>
+        </div>
+        <div className="flex items-center py-2 px-3 border-r border-crm-gray-400">
+          <h3 className="text-[32px] font-semibold text-white">11 </h3>
+          <p className="ml-3 text-crm-gray-600">Linkedin</p>
+        </div>
+      </>
+    );
+  };
 
   return (
     <DashboardLayout>
@@ -284,16 +351,6 @@ export default function Task() {
             />
           </div>
           <div className="mt-4">
-            {/* <div className="activity-task-tab flex text-crm-gray-600 w-full ">
-              <button onClick={() => setActiveTaskFilterTab("smart_views")} className={`bg-none whitespace-nowrap py-3 px-3 ${activeTaskFilterTab === "smart_views" && "active"}`}>
-                Smart Views
-              </button>
-              <button onClick={() => setActiveTaskFilterTab("sort&filters")} className={`bg-none whitespace-nowrap py-3 px-3  ml-5 ${activeTaskFilterTab === "sort&filters" && "active"}`}>
-                Sort & Filters
-              </button>
-
-            </div> */}
-
             <FilterTab tabButton={activityTaskButton} />
             <MiniInput className="mt-3" icon={SearchIcon} placeholder="Type to search..." variant="crm-gray" type="text" />
 
@@ -305,7 +362,7 @@ export default function Task() {
           </div>
         </section>
         <section>
-          <div className="flex">
+          <div className="flex ">
             <div className="activity-task-tab flex text-crm-gray-600 w-full">
               <button onClick={() => setActiveTaskTab("task")} className={`bg-none py-3 px-3 ${activeTaskTab === "task" && "active"}`}>
                 Task
@@ -314,10 +371,14 @@ export default function Task() {
                 Activity
               </button>
             </div>
+
+            <Button variant="primary" paddingClassName="px-3 py-2">
+              <AddIcon />
+            </Button>
           </div>
 
           {activeTaskTab === "activity" ? (
-            <>
+            <div className="max-w-[800px]">
               <div className="flex justify-between my-3">
                 <span className="py-2 px-3 text-white font-normal rounded-md border border-crm-gray-350 ml-2 bg-crm-gray-200 flex items-center">
                   Assigned to Me{" "}
@@ -365,7 +426,7 @@ export default function Task() {
                 createdDate="06/01/22 10:11:05"
                 content="You resumed Keith Hnatiuk from Step #2 (Manual Email) of Enterprise Custom - Email Only Sequence"
               />
-            </>
+            </div>
           ) : (
             <>
               <div className="flex justify-between my-3">
@@ -379,7 +440,7 @@ export default function Task() {
                 <button className="text-crm-primary">Clear All</button>
               </div>
 
-              <DashboardTaskTable rows={rows} columns={columns} head={false} />
+              <DashboardTaskTable heading={<TaskHeading />} rows={rows} columns={columns} head={false} />
             </>
           )}
         </section>

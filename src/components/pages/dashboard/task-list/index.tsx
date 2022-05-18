@@ -2,21 +2,6 @@ import moment from "moment";
 import FormatService from "@src/utility/services/format.service";
 import DashboardTaskTable from "@src/components/pages/dashboard/task-table";
 
-interface ITaskTableColumn {
-  difficulty: string;
-  content: string;
-}
-interface IInitialNameTableColumn {
-  fullName: string;
-}
-interface INameTableColumn {
-  name: string;
-  position: string;
-}
-interface IDueDateTableColumn {
-  dueDate: string;
-}
-
 export default function DashboardTaskList() {
   const formatService = new FormatService();
 
@@ -150,9 +135,28 @@ export default function DashboardTaskList() {
       ],
     },
   ];
+
+  const TaskHeading = () => {
+    return (
+      <>
+        <div className="flex items-center py-2 px-3 border-r border-crm-gray-400">
+          <h3 className="text-crm-primary text-[32px] font-semibold">4</h3>
+          <p className="ml-3 text-crm-gray-600">Total</p>
+        </div>
+        <div className="flex items-center py-2 px-3 border-r border-crm-gray-400">
+          <h3 className="text-[32px] font-semibold">3</h3>
+          <p className="ml-3 text-crm-gray-600">Email</p>
+        </div>
+        <div className="flex items-center py-2 px-3 border-r border-crm-gray-400">
+          <h3 className="text-[32px] font-semibold">1</h3>
+          <p className="ml-3 text-crm-gray-600">Linkedin</p>
+        </div>
+      </>
+    );
+  };
   return (
     <section className="text-white mt-5 mb-9 basis-[58%] overflow-y-hidden bg-crm-dark-300 text-white w-full px-5 py-3 rounded-md">
-      <DashboardTaskTable head rows={rows} columns={columns} className="bg-transparent" />
+      <DashboardTaskTable heading={<TaskHeading />} head rows={rows} columns={columns} className="bg-transparent" />
     </section>
   );
 }
