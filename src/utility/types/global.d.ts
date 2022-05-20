@@ -103,6 +103,7 @@ declare interface IDueDateTableColumn {
 
 declare interface ITabFilter {
   tabButton: ITabFilterButton[];
+  className?: string;
 }
 
 declare interface ITabFilterButton {
