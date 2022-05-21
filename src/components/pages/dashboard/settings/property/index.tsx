@@ -106,7 +106,7 @@ export default function SettingsProperty() {
       <p className="my-8">
         Properties store information about a contact, company, deal, or ticket. Your HubSpot account includes a number of contact, company, deal, and ticket properties by default.
       </p>
-      <div className="flex flex-col lg:flex-row justify-between w-full my-4 lg:items-center">
+      <div className="flex flex-col md:flex-row justify-between w-full my-4 lg:items-center">
         <FilterTabButton tabButton={filterList} />
         <Button variant="blue" className="mt-9 lg:mt-0">
           Create Properties
