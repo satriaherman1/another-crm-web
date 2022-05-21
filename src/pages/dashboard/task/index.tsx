@@ -429,7 +429,7 @@ export default function Task() {
             </div>
           ) : (
             <>
-              <div className="flex justify-between my-3">
+              <div className="flex justify-between my-3 ">
                 <span className="py-2 px-3 text-white font-normal rounded-md border border-crm-gray-350 ml-2 bg-crm-gray-200 flex items-center">
                   Assigned to Me{" "}
                   <button className="ml-2">
@@ -440,7 +440,7 @@ export default function Task() {
                 <button className="text-crm-primary">Clear All</button>
               </div>
 
-              <DashboardTaskTable heading={<TaskHeading />} rows={rows} columns={columns} head={false} />
+              <DashboardTaskTable className="max-w-[800px]" heading={<TaskHeading />} rows={rows} columns={columns} head={false} />
             </>
           )}
         </section>

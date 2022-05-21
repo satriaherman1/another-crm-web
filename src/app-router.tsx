@@ -13,6 +13,7 @@ const AccountPage = React.lazy(() => import("./pages/dashboard/account"));
 const AccountEditPage = React.lazy(() => import("./pages/dashboard/account/edit"));
 const TaskPage = React.lazy(() => import("./pages/dashboard/task"));
 const SchedulesPage = React.lazy(() => import("./pages/dashboard/schedules"));
+const CallsPage = React.lazy(() => import("./pages/dashboard/calls"));
 
 export default function AppRouter() {
   return (
@@ -31,6 +32,7 @@ export default function AppRouter() {
             <Route index element={<AccountPage />} />
             <Route path="edit" element={<AccountEditPage />} />
           </Route>
+          <Route path="calls" element={<CallsPage />} />
           <Route path="schedules" element={<SchedulesPage />} />
         </Route>
         <Route path="order-summary" caseSensitive element={<OrderSummaryPage />}></Route>
