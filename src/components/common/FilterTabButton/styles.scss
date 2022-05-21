@@ -1,8 +1,6 @@
 .filter-tab-button {
-  display: flex;
-
   button {
-    @apply bg-crm-gray-420 py-4 px-6 capitalize;
+    @apply flex  bg-crm-gray-420 py-4 px-6 capitalize;
 
     &:first-child {
       border-radius: 15px 0 0 15px;

@@ -1,6 +1,7 @@
 import FilterTab from "@src/components/common/FilterTab";
 import SettingsManagePeople from "@src/components/pages/dashboard/settings/manage-people";
 import SettingsProperty from "@src/components/pages/dashboard/settings/property";
+import VoiceSettings from "@src/components/pages/dashboard/settings/voice-settings";
 import DashboardLayout from "@src/layout/dashboard-layout";
 import React, { useEffect, useState } from "react";
 
@@ -44,12 +45,15 @@ export default function Settings() {
       case "property":
         setSettingsContent(<SettingsProperty />);
         break;
+      case "voice settings":
+        setSettingsContent(<VoiceSettings />);
+        break;
     }
   }, [activeFilterTab]);
 
   return (
     <DashboardLayout>
-      <div className="py-4 px-5 bg-crm-dark-300 mt-4">
+      <div className="py-4 px-5 bg-crm-dark-300 my-4">
         <FilterTab tabButton={filterList} className="gap-x-5" />
 
         {settingsContent}
