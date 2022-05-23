@@ -41,7 +41,7 @@ export default function PluginTask() {
 
   return (
     <>
-      <div className={`fixed text-white bg-crm-dark-300 duration-300 top-1/2 z-10 rounded-md ${pluginModal ? "right-[3vw]" : "right-[-100vw]"}`}>
+      <div className={`fixed text-white bg-crm-dark-300 duration-300 top-1/2 z-10 rounded-md ${pluginModal ? "right-[3vw]" : "right-[-125vw]"}`}>
         <FilterTab tabButton={filterTabList} className="px-4" />
 
         <section className="flex  items-center gap-x-5 py-5 border-y border-crm-gray-300  px-3">
