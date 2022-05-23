@@ -4,9 +4,11 @@ import DashboardTaskTable from "@src/components/pages/dashboard/task-table";
 import Checkbox from "@src/components/common/Checkbox";
 import InputRadio from "@src/components/common/InputRadio";
 import Button from "@src/components/common/Button";
+import useLocalData from "@src/utility/hooks/useLocalData";
 
 export default function DashboardTaskList() {
   const formatService = new FormatService();
+  const { dispatch } = useLocalData();
 
   const DueDateColumn = (props: IDueDateTableColumn) => {
     const { dueDate } = props;
@@ -169,7 +171,15 @@ export default function DashboardTaskList() {
         <InputRadio className="ml-3 " name="sort" label="Priority" />
         <InputRadio className="ml-2" name="sort" label="Prospec Engagement" />
       </div>
-      <Button variant="primary" className="whitespace-nowrap ml-5">
+      <Button
+        onClick={() =>
+          dispatch({
+            type: "SHOW_PLUGIN_MODAL",
+          })
+        }
+        variant="primary"
+        className="whitespace-nowrap ml-5"
+      >
         Start 4 Task
       </Button>
     </section>

@@ -5,5 +5,10 @@ export default function reducer(state: any, action: any) {
         ...state,
         pluginModal: true,
       };
+    case "HIDE_PLUGIN_MODAL":
+      return {
+        ...state,
+        pluginModal: false,
+      };
   }
 }

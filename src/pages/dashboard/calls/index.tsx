@@ -1,6 +1,5 @@
 import Dropdown from "@src/components/common/Dropdown";
 import { AddIcon, CallSlashIcon, ClocklIcon, HeadphoneIcon, LevelIcon, MicrophoneIcon, MoreRectangleIcon, PhoneFilledIcon, VoiceSquareIcon } from "@src/components/common/Icon";
-import Input from "@src/components/common/Input";
 import DashboardLayout from "@src/layout/dashboard-layout";
 import KioskBoard from "kioskboard";
 import { useEffect } from "react";
