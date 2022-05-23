@@ -9,6 +9,8 @@ declare interface ICrmInput {
   variant?: "crm-gray" | "crm-primary" | "crm-transparent";
   value?: any;
   isNoMaxWidth?: boolean;
+  /* for javascript data binding type like : data-modal */
+  numpad?: boolean;
 }
 declare interface ICrmTextarea {
   id?: string;

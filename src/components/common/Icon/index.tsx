@@ -424,7 +424,7 @@ export function EyeIcon(props: IconProps): ReactElement {
     <svg className={className ?? ""} width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         d="M22.4089 9.15C19.9808 5.52 16.4281 3.43 12.6862 3.43C10.8153 3.43 8.9969 3.95 7.33617 4.92C5.67544 5.9 4.18288 7.33 2.96361 9.15C1.91252 10.72 1.91252 13.27 2.96361 14.84C5.39164 18.48 8.94434 20.56 12.6862 20.56C14.5572 20.56 16.3756 20.04 18.0363 19.07C19.697 18.09 21.1896 16.66 22.4089 14.84C23.46 13.28 23.46 10.72 22.4089 9.15ZM12.6862 16.04C10.3318 16.04 8.43982 14.23 8.43982 12C8.43982 9.77 10.3318 7.96 12.6862 7.96C15.0407 7.96 16.9327 9.77 16.9327 12C16.9327 14.23 15.0407 16.04 12.6862 16.04Z"
-        fill={fill ? fill : "#0EC8CE"}
+        fill={fill ?? "#0EC8CE"}
       />
       <path
         d="M12.6865 9.14C11.0363 9.14 9.69092 10.42 9.69092 12C9.69092 13.57 11.0363 14.85 12.6865 14.85C14.3368 14.85 15.6927 13.57 15.6927 12C15.6927 10.43 14.3368 9.14 12.6865 9.14Z"
@@ -503,8 +503,8 @@ export function SearchIcon(props: IconProps): ReactElement {
   const { className, fill, width, height } = props;
   return (
     <svg className={className ?? ""} width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="7.82492" cy="7.82492" r="6.74142" stroke={fill ? fill : "#3C4254"} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M12.5137 12.8638L15.1567 15.4999" stroke={fill ? fill : "#3C4254"} stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+      <circle cx="7.82492" cy="7.82492" r="6.74142" stroke={fill ? fill : "#3C4254"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M12.5137 12.8638L15.1567 15.4999" stroke={fill ? fill : "#3C4254"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -666,19 +666,19 @@ export function NotificationBing(props: IconProps): ReactElement {
   const { className, fill, width, height } = props;
   return (
     <svg className={className ?? ""} width={width ? width : "24"} height={height ? height : "24"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 6.43994V9.76994" stroke={fill ? fill : "white"} stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" />
+      <path d="M12 6.43994V9.76994" stroke={fill ? fill : "white"} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" />
       <path
         d="M12.0199 2C8.3399 2 5.3599 4.98 5.3599 8.66V10.76C5.3599 11.44 5.0799 12.46 4.7299 13.04L3.4599 15.16C2.6799 16.47 3.2199 17.93 4.6599 18.41C9.4399 20 14.6099 20 19.3899 18.41C20.7399 17.96 21.3199 16.38 20.5899 15.16L19.3199 13.04C18.9699 12.46 18.6899 11.43 18.6899 10.76V8.66C18.6799 5 15.6799 2 12.0199 2Z"
         stroke={fill ? fill : "white"}
-        stroke-width="1.5"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
       />
       <path
         d="M15.3299 18.8199C15.3299 20.6499 13.8299 22.1499 11.9999 22.1499C11.0899 22.1499 10.2499 21.7699 9.64992 21.1699C9.04992 20.5699 8.66992 19.7299 8.66992 18.8199"
         stroke={fill ? fill : "white"}
-        stroke-width="1.5"
-        stroke-miterlimit="10"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
       />
     </svg>
   );
@@ -688,8 +688,8 @@ export function CloseIcon(props: IconProps): ReactElement {
   const { className, fill, width, height } = props;
   return (
     <svg className={className ?? ""} width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M4.74268 4.75736L13.228 13.2426" stroke={fill ? fill : "#0EC8CE"} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-      <path d="M13.2279 4.75736L4.74262 13.2426" stroke={fill ? fill : "#0EC8CE"} stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M4.74268 4.75736L13.228 13.2426" stroke={fill ? fill : "#0EC8CE"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M13.2279 4.75736L4.74262 13.2426" stroke={fill ? fill : "#0EC8CE"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -734,7 +734,150 @@ export function ClocklIcon(props: IconProps): ReactElement {
         strokeLinejoin="round"
       />
       <path d="M9 6V9.75" stroke={fill ?? "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M6.75 1.5H11.25" stroke={fill ?? "#0EC8CE"} strokeWidth="1.5" stroke-miterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6.75 1.5H11.25" stroke={fill ?? "#0EC8CE"} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function MicrophoneIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width={width ?? "18"} height={height ?? "18"} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M9 11.625C10.6575 11.625 12 10.2825 12 8.625V4.5C12 2.8425 10.6575 1.5 9 1.5C7.3425 1.5 6 2.8425 6 4.5V8.625C6 10.2825 7.3425 11.625 9 11.625Z"
+        stroke={fill ?? "#0EC8CE"}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3.26245 7.2375V8.5125C3.26245 11.6775 5.83495 14.25 8.99995 14.25C12.165 14.25 14.7375 11.6775 14.7375 8.5125V7.2375"
+        stroke={fill ?? "#0EC8CE"}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M7.95752 4.8225C8.63252 4.575 9.36752 4.575 10.0425 4.8225" stroke={fill ?? "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M8.3999 6.4125C8.7974 6.3075 9.2099 6.3075 9.6074 6.4125" stroke={fill ?? "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M9 14.25V16.5" stroke={fill ?? "#0EC8CE"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function HeadphoneIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width={width ?? "18"} height={height ?? "18"} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M4.09504 13.8675V11.6775C4.09504 10.95 4.66504 10.2975 5.47504 10.2975C6.20254 10.2975 6.85504 10.8675 6.85504 11.6775V13.785C6.85504 15.2475 5.64004 16.4625 4.17754 16.4625C2.71504 16.4625 1.50004 15.24 1.50004 13.785V9.165C1.41754 4.95 4.74754 1.5375 8.96254 1.5375C13.1775 1.5375 16.5 4.95 16.5 9.0825V13.7025C16.5 15.165 15.285 16.38 13.8225 16.38C12.36 16.38 11.145 15.165 11.145 13.7025V11.595C11.145 10.8675 11.715 10.215 12.525 10.215C13.2525 10.215 13.905 10.785 13.905 11.595V13.8675"
+        stroke={fill ?? "#0EC8CE"}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function MessageNotifIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width={width ?? "18"} height={height ?? "18"} viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M16.5 7.5V9.75C16.5 12.75 15 14.25 12 14.25H11.625C11.3925 14.25 11.1675 14.3625 11.025 14.55L9.9 16.05C9.405 16.71 8.595 16.71 8.1 16.05L6.975 14.55C6.855 14.385 6.5775 14.25 6.375 14.25H6C3 14.25 1.5 13.5 1.5 9.75V6C1.5 3 3 1.5 6 1.5H10.5"
+        stroke={fill ?? "#0EC8CE"}
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M14.625 5.25C15.6605 5.25 16.5 4.41053 16.5 3.375C16.5 2.33947 15.6605 1.5 14.625 1.5C13.5895 1.5 12.75 2.33947 12.75 3.375C12.75 4.41053 13.5895 5.25 14.625 5.25Z"
+        stroke={fill ?? "#0EC8CE"}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M11.9973 8.25H12.0041" stroke={fill ?? "#0EC8CE"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M8.99661 8.25H9.00335" stroke={fill ?? "#0EC8CE"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M5.99588 8.25H6.00262" stroke={fill ?? "#0EC8CE"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function VoiceSquareIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg width={width ?? "24"} height={height ?? "24"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.6">
+        <path d="M6 9.85999V14.15" stroke={fill ?? "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 8.42999V15.57" stroke={fill ?? "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 7V17" stroke={fill ?? "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M15 8.42999V15.57" stroke={fill ?? "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M18 9.85999V14.15" stroke={fill ?? "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M9 22H15C20 22 22 20 22 15V9C22 4 20 2 15 2H9C4 2 2 4 2 9V15C2 20 4 22 9 22Z" stroke={fill ?? "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </g>
+    </svg>
+  );
+}
+
+export function CallSlashIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width={width ?? "24"} height={height ?? "24"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.6">
+        <path
+          d="M10.3201 18.97C10.4601 19.08 10.6001 19.18 10.7501 19.29C11.8901 20.12 13.0401 20.78 14.1901 21.27C15.3401 21.76 16.4301 22 17.4501 22C18.1501 22 18.8001 21.87 19.4001 21.62C20.0101 21.37 20.5501 20.98 21.0401 20.44C21.3301 20.12 21.5501 19.78 21.7201 19.42C21.8901 19.06 21.9701 18.69 21.9701 18.33C21.9701 18.05 21.9101 17.8 21.8101 17.55C21.7001 17.3 21.5201 17.09 21.2601 16.91L17.9501 14.56C17.7001 14.39 17.4701 14.26 17.2501 14.17C17.0301 14.08 16.8301 14.04 16.6401 14.04C16.3901 14.04 16.1601 14.11 15.9301 14.25C15.7001 14.37 15.4601 14.56 15.2101 14.81L14.4501 15.56C14.3401 15.67 14.2101 15.73 14.0401 15.73C13.9501 15.73 13.8701 15.72 13.7901 15.69C13.7201 15.66 13.6601 15.63 13.6101 15.61C13.4201 15.51 13.2001 15.37 12.9601 15.19"
+          stroke={fill ?? "white"}
+          strokeWidth="1.5"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M10.73 13.22C10.21 12.69 9.73 12.16 9.28 11.64C8.84 11.12 8.53 10.69 8.35 10.36C8.33 10.3 8.3 10.24 8.27 10.16C8.25 10.08 8.24 10.01 8.24 9.93C8.24 9.77 8.29 9.64 8.4 9.53L9.16 8.74C9.4 8.5 9.59 8.26 9.72 8.03C9.86 7.8 9.93 7.56 9.93 7.32C9.93 7.13 9.88 6.92 9.79 6.71C9.7 6.49 9.57 6.26 9.39 6.01L7.07 2.74C6.89 2.48 6.66 2.3 6.4 2.18C6.15 2.06 5.87 2 5.59 2C4.85 2 4.15 2.31 3.51 2.94C2.98 3.44 2.6 4 2.36 4.61C2.12 5.21 2 5.86 2 6.54C2 7.58 2.24 8.67 2.72 9.81C3.2 10.94 3.86 12.08 4.68 13.22C5.51 14.36 6.44 15.45 7.47 16.49"
+          stroke={fill ?? "white"}
+          strokeWidth="1.5"
+          strokeMiterlimit="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path d="M22 2L2 22" stroke={fill ?? "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </g>
+    </svg>
+  );
+}
+
+export function MoreRectangleIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width={width ?? "24"} height={height ?? "24"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 3C3.9 3 3 3.9 3 5C3 6.1 3.9 7 5 7C6.1 7 7 6.1 7 5C7 3.9 6.1 3 5 3Z" fill={fill ?? "#0EC8CE"} stroke="#292D32" />
+      <path d="M5 10C3.9 10 3 10.9 3 12C3 13.1 3.9 14 5 14C6.1 14 7 13.1 7 12C7 10.9 6.1 10 5 10Z" fill={fill ?? "#0EC8CE"} stroke="#292D32" />
+      <path d="M19 3C17.9 3 17 3.9 17 5C17 6.1 17.9 7 19 7C20.1 7 21 6.1 21 5C21 3.9 20.1 3 19 3Z" fill={fill ?? "#0EC8CE"} stroke="#292D32" />
+      <path d="M19 10C17.9 10 17 10.9 17 12C17 13.1 17.9 14 19 14C20.1 14 21 13.1 21 12C21 10.9 20.1 10 19 10Z" fill={fill ?? "#0EC8CE"} stroke="#292D32" />
+      <path d="M12 3C10.9 3 10 3.9 10 5C10 6.1 10.9 7 12 7C13.1 7 14 6.1 14 5C14 3.9 13.1 3 12 3Z" fill={fill ?? "#0EC8CE"} stroke="#292D32" />
+      <path d="M12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z" fill={fill ?? "#0EC8CE"} stroke="#292D32" />
+      <path d="M12 17C10.9 17 10 17.9 10 19C10 20.1 10.9 21 12 21C13.1 21 14 20.1 14 19C14 17.9 13.1 17 12 17Z" fill={fill ?? "#0EC8CE"} stroke="#292D32" />
+    </svg>
+  );
+}
+
+export function LevelIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width={width ?? "24"} height={height ?? "24"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g opacity="0.6">
+        <path d="M2.19995 14.02C3.12995 18.58 7.15995 22 12 22C16.82 22 20.8399 18.59 21.7899 14.05" stroke={fill ?? "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M21.81 10.06C20.91 5.46 16.86 2 12 2C7.16995 2 3.13995 5.43001 2.19995 9.98001" stroke={fill ?? "white"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path
+          d="M12 13.5C12.8284 13.5 13.5 12.8284 13.5 12C13.5 11.1716 12.8284 10.5 12 10.5C11.1716 10.5 10.5 11.1716 10.5 12C10.5 12.8284 11.1716 13.5 12 13.5Z"
+          stroke={fill ?? "white"}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </g>
     </svg>
   );
 }

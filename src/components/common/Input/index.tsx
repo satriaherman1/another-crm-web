@@ -1,7 +1,7 @@
 import "./styles.scss";
 
 export default function Input(props: ICrmInput) {
-  const { type, name, id, placeholder, icon, className, style, isNoMaxWidth } = props;
+  const { type, name, id, placeholder, icon, className, style, isNoMaxWidth, numpad } = props;
 
   let crmTypeClass;
 
@@ -28,6 +28,7 @@ export default function Input(props: ICrmInput) {
       id={id ?? ""}
       placeholder={placeholder ?? ""}
       className={`${className ?? ""} ${!icon ? "px-5" : " pl-[48px] pr-[7px] "} py-[15px]  ${crmTypeClass} ${!isNoMaxWidth && "max-w-[500px]"} crm-input mt-3 `}
+      data-kioskboard-type={numpad ? "numpad" : ""}
     />
   );
 }
