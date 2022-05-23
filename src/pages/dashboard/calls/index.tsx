@@ -98,6 +98,7 @@ export default function Calls() {
             type="text"
             className="calls-keypad w-full border-0 py-4 text-white bg-transparent px-4 outline-0"
             data-kioskboard-type="numpad"
+            placeholder="type phone number here"
           />
         </section>
       </div>
