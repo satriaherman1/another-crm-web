@@ -1,12 +1,11 @@
-import Button from "@src/components/common/Button";
 import Checkbox from "@src/components/common/Checkbox";
-import InputRadio from "@src/components/common/InputRadio";
+import React from "react";
 
 interface ICrmTableProps {
   columns: ICrmColumns[];
   rows: ICrmRows[];
   className?: string;
-  head: boolean;
+  head: React.ReactElement;
   heading: any;
 }
 
@@ -14,22 +13,7 @@ export default function DashboardTaskTable(props: ICrmTableProps) {
   const { className, columns, rows, head, heading } = props;
   return (
     <div className={` overflow-x-scroll  `}>
-      {head && (
-        <section className="flex justify-between w-full pt-4 gap-10 items-center">
-          <div className="flex ml-2 whitespace-nowrap">
-            <Checkbox />
-            <p className="text-white ml-4 w-[fit-content]">Upcoming Task</p>
-          </div>
-          <div className="flex items-center whitespace-nowrap">
-            <p className="text-crm-mutted-blue">Sort By:</p>
-            <InputRadio className="ml-3 " name="sort" label="Priority" />
-            <InputRadio className="ml-2" name="sort" label="Prospec Engagement" />
-          </div>
-          <Button variant="primary" className="whitespace-nowrap ml-5">
-            Start 4 Task
-          </Button>
-        </section>
-      )}
+      {head ?? ""}
 
       <section className="flex my-4 border-b border-crm-gray-350">{heading}</section>
 

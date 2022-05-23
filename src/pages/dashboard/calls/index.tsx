@@ -91,7 +91,14 @@ export default function Calls() {
         </section>
 
         <section className="bg-crm-dark-300">
-          <Input type="text" className="calls-keypad" numpad />
+          <input
+            onClick={() => {
+              window?.scrollTo(0, 100);
+            }}
+            type="text"
+            className="calls-keypad w-full border-0 py-4 text-white bg-transparent px-4 outline-0"
+            data-kioskboard-type="numpad"
+          />
         </section>
       </div>
     </DashboardLayout>

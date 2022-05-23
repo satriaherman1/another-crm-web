@@ -113,3 +113,8 @@ declare interface ITabFilterButton {
   activeIndicator: string;
   key: string;
 }
+
+declare interface ILocalData {
+  store: any;
+  dispatch: any;
+}

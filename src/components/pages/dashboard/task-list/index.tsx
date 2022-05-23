@@ -1,6 +1,9 @@
 import moment from "moment";
 import FormatService from "@src/utility/services/format.service";
 import DashboardTaskTable from "@src/components/pages/dashboard/task-table";
+import Checkbox from "@src/components/common/Checkbox";
+import InputRadio from "@src/components/common/InputRadio";
+import Button from "@src/components/common/Button";
 
 export default function DashboardTaskList() {
   const formatService = new FormatService();
@@ -154,9 +157,27 @@ export default function DashboardTaskList() {
       </>
     );
   };
+
+  const TableHeadAdvanced = () => (
+    <section className="flex justify-between w-full pt-4 gap-10 items-center">
+      <div className="flex ml-2 whitespace-nowrap">
+        <Checkbox />
+        <p className="text-white ml-4 w-[fit-content]">Upcoming Task</p>
+      </div>
+      <div className="flex items-center whitespace-nowrap">
+        <p className="text-crm-mutted-blue">Sort By:</p>
+        <InputRadio className="ml-3 " name="sort" label="Priority" />
+        <InputRadio className="ml-2" name="sort" label="Prospec Engagement" />
+      </div>
+      <Button variant="primary" className="whitespace-nowrap ml-5">
+        Start 4 Task
+      </Button>
+    </section>
+  );
+
   return (
     <section className="text-white mt-5 mb-9 basis-[58%] overflow-y-hidden bg-crm-dark-300 text-white w-full px-5 py-3 rounded-md">
-      <DashboardTaskTable heading={<TaskHeading />} head rows={rows} columns={columns} className="bg-transparent" />
+      <DashboardTaskTable heading={<TaskHeading />} head={<TableHeadAdvanced />} rows={rows} columns={columns} className="bg-transparent" />
     </section>
   );
 }
