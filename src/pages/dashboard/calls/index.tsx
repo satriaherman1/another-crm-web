@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 export default function Calls() {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
+  const [isShowKeyboard, setIsShowKeyboard] = useState<boolean>(false);
   const callsFilter = [
     {
       label: "Log Call & Complete",
@@ -80,11 +81,20 @@ export default function Calls() {
 
         <section className="bg-crm-dark-300 pb-4">
           <div className="flex">
-            <input type="text" value={phoneNumber} className="calls-keypad w-full border-0 py-4 text-white bg-transparent px-4 outline-0" placeholder="type phone number here" />
+            <input
+              onClick={() => {
+                setIsShowKeyboard(true);
+              }}
+              type="text"
+              value={phoneNumber}
+              className="calls-keypad w-full border-0 py-4 text-white bg-transparent px-4 outline-0"
+              placeholder="type phone number here"
+            />
             <button
               className="bg-crm-red  rounded "
               onClick={() => {
                 const val = phoneNumber.slice(0, phoneNumber.length - 1);
+
                 setPhoneNumber(val);
               }}
             >
@@ -92,7 +102,7 @@ export default function Calls() {
             </button>
           </div>
 
-          <CallKeyboard changeFunc={setPhoneNumber} targetValue={phoneNumber} className="mx-auto my-6" />
+          <CallKeyboard setShowKeyboard={setIsShowKeyboard} showKeyboard={isShowKeyboard} changeFunc={setPhoneNumber} targetValue={phoneNumber} className="mx-auto my-6" />
         </section>
       </div>
     </DashboardLayout>
