@@ -1,4 +1,4 @@
-import { PhoneFilledIcon } from "@src/components/common/Icon";
+import { DeleteSquareIcon, PhoneFilledIcon } from "@src/components/common/Icon";
 
 interface ICallKeyboard {
   className?: string;
@@ -70,9 +70,15 @@ export default function CallKeyboard(props: ICallKeyboard) {
         </button>
       </section>
 
-      <button className="bg-crm-green-300 p-3 w-[fit-content] rounded-full ">
-        <PhoneFilledIcon fill="#fff" />
-      </button>
+      <section className="flex gap-x-3 w-full justify-center">
+        <button className="bg-crm-green-300 p-3 w-[fit-content] rounded-full ">
+          <PhoneFilledIcon fill="#fff" />
+        </button>
+
+        {/* <button className="bg-crm-gray-200 basis-[80%] rounded ">
+          <DeleteSquareIcon width="80px" fill="#fff" />
+        </button> */}
+      </section>
     </div>
   );
 }

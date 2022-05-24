@@ -1,6 +1,6 @@
 import CallKeyboard from "@src/components/common/CallKeyboard";
 import Dropdown from "@src/components/common/Dropdown";
-import { AddIcon, CallSlashIcon, ClocklIcon, HeadphoneIcon, LevelIcon, MicrophoneIcon, MoreRectangleIcon, PhoneFilledIcon, VoiceSquareIcon } from "@src/components/common/Icon";
+import { AddIcon, CallSlashIcon, ClocklIcon, DeleteSquareIcon, HeadphoneIcon, LevelIcon, MicrophoneIcon, MoreRectangleIcon, PhoneFilledIcon, VoiceSquareIcon } from "@src/components/common/Icon";
 import DashboardLayout from "@src/layout/dashboard-layout";
 import { useEffect, useState } from "react";
 
@@ -78,14 +78,19 @@ export default function Calls() {
           </div>
         </section>
 
-        <section className="bg-crm-dark-300 py-4">
-          <input
-            type="text"
-            value={phoneNumber}
-            className="calls-keypad w-full border-0 py-4 text-white bg-transparent px-4 outline-0"
-            data-kioskboard-type="numpad"
-            placeholder="type phone number here"
-          />
+        <section className="bg-crm-dark-300 pb-4">
+          <div className="flex">
+            <input type="text" value={phoneNumber} className="calls-keypad w-full border-0 py-4 text-white bg-transparent px-4 outline-0" placeholder="type phone number here" />
+            <button
+              className="bg-crm-red  rounded "
+              onClick={() => {
+                const val = phoneNumber.slice(0, phoneNumber.length - 1);
+                setPhoneNumber(val);
+              }}
+            >
+              <DeleteSquareIcon width="80px" fill="#fff" />
+            </button>
+          </div>
 
           <CallKeyboard changeFunc={setPhoneNumber} targetValue={phoneNumber} className="mx-auto my-6" />
         </section>
