@@ -1,4 +1,5 @@
 import { DeleteSquareIcon, PhoneFilledIcon } from "@src/components/common/Icon";
+import "./styles.scss";
 
 interface ICallKeyboard {
   className?: string;
@@ -9,7 +10,7 @@ interface ICallKeyboard {
 export default function CallKeyboard(props: ICallKeyboard) {
   const { className, changeFunc, targetValue } = props;
   return (
-    <div className={`flex flex-col items-center gap-y-10 gap-x-10 text-white w-[fit-content] ${className ?? ""}`}>
+    <div className={`crm-keypad ${className ?? ""}`}>
       <section className="flex gap-x-20">
         <button className="flex flex-col items-center gap-y-1" onClick={(state) => changeFunc(targetValue + "1")}>
           <span className="text-[24px]">1</span>
@@ -58,7 +59,7 @@ export default function CallKeyboard(props: ICallKeyboard) {
       <section className="flex gap-x-20">
         <button className="flex flex-col items-center gap-y-1" onClick={(state) => changeFunc(targetValue + "*")}>
           <span className="text-[24px]">*</span>
-          <span className="text-crm-gray-600 font-normal invisible">ABC</span>
+          <span className="text-crm-gray-600 font-normal invisible">ABC1</span>
         </button>
         <button className="flex flex-col items-center gap-y-1" onClick={(state) => changeFunc(targetValue + "0")}>
           <span className="text-[24px]">0</span>

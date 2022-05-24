@@ -1,0 +1,9 @@
+.crm-keypad {
+  @apply flex flex-col items-center gap-y-10 gap-x-10 text-white w-[fit-content];
+
+  section {
+    button {
+      width: 43.234px;
+    }
+  }
+}
