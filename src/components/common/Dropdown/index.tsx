@@ -19,30 +19,40 @@ export default function Dropdown(props: ICrmDropdown) {
   }
 
   return (
-    <div className={`relative crm-dropdown max-w-[500px] ${className ?? ""}`}>
-      <select id={id ?? ""} name={name ?? ""} onClick={() => handleClickDropdown()} ref={selectRef} className={`${dropdownVariantClass} ${borderVariantClass ?? "base-border"}  py-2 pl-3 pr-[30px]`}>
-        {optList.map((opt) => (
-          <option key={opt.value} value={opt.value}>
-            {opt.label}
-          </option>
-        ))}
-      </select>
+    <>
+      <div className={`relative crm-dropdown max-w-[500px] z-20 ${className ?? ""}`}>
+        <select id={id ?? ""} name={name ?? ""} onClick={() => handleClickDropdown()} ref={selectRef} className={`${dropdownVariantClass} ${borderVariantClass ?? "base-border"}  py-2 pl-3 pr-[30px]`}>
+          {optList.map((opt) => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
 
-      <ul className={`absolute text-white text-[14px] ${showOptLabel ? "block" : "hidden"} `}>
-        {optList.map((opt) => (
-          <li
-            onClick={() => {
-              if (selectRef.current && selectRef.current.value) {
-                selectRef.current.value = opt.value;
-              }
-              setShowOptLabel(!showOptLabel);
-            }}
-            key={opt.value}
-          >
-            {opt.label}
-          </li>
-        ))}
-      </ul>
-    </div>
+        <ul className={`absolute text-white text-[14px] ${showOptLabel ? "block" : "hidden"} `}>
+          {optList.map((opt) => (
+            <li
+              onClick={() => {
+                if (selectRef.current && selectRef.current.value) {
+                  selectRef.current.value = opt.value;
+                }
+                setShowOptLabel(!showOptLabel);
+              }}
+              key={opt.value}
+            >
+              {opt.label}
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div
+        className={`${!showOptLabel && "hidden"} fixed top-0 left-0 w-[100vw] h-[100vh] z-10" `}
+        onClick={() => {
+          setShowOptLabel(false);
+          console.log("test");
+        }}
+      ></div>
+    </>
   );
 }
