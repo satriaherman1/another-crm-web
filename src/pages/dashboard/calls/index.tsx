@@ -2,17 +2,16 @@ import CallKeyboard from "@src/components/common/CallKeyboard";
 import Dropdown from "@src/components/common/Dropdown";
 import { AddIcon, CallSlashIcon, ClocklIcon, HeadphoneIcon, LevelIcon, MicrophoneIcon, MoreRectangleIcon, PhoneFilledIcon, VoiceSquareIcon } from "@src/components/common/Icon";
 import DashboardLayout from "@src/layout/dashboard-layout";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Calls() {
+  const [phoneNumber, setPhoneNumber] = useState<string>("");
   const callsFilter = [
     {
       label: "Log Call & Complete",
       value: "Log Call & Complete",
     },
   ];
-
-  useEffect(() => {}, []);
 
   return (
     <DashboardLayout>
@@ -80,9 +79,15 @@ export default function Calls() {
         </section>
 
         <section className="bg-crm-dark-300 py-4">
-          <input type="text" className="calls-keypad w-full border-0 py-4 text-white bg-transparent px-4 outline-0" data-kioskboard-type="numpad" placeholder="type phone number here" />
+          <input
+            type="text"
+            value={phoneNumber}
+            className="calls-keypad w-full border-0 py-4 text-white bg-transparent px-4 outline-0"
+            data-kioskboard-type="numpad"
+            placeholder="type phone number here"
+          />
 
-          <CallKeyboard className="mx-auto my-6" />
+          <CallKeyboard changeFunc={setPhoneNumber} targetValue={phoneNumber} className="mx-auto my-6" />
         </section>
       </div>
     </DashboardLayout>
