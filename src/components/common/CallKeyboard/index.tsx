@@ -8,10 +8,11 @@ interface ICallKeyboard {
   targetValue: string;
   showKeyboard: boolean;
   setShowKeyboard: (state?: any) => any;
+  callAction?: (state?: any) => any;
 }
 
 export default function CallKeyboard(props: ICallKeyboard) {
-  const { className, changeFunc, targetValue, showKeyboard, setShowKeyboard } = props;
+  const { className, changeFunc, targetValue, showKeyboard, setShowKeyboard, callAction } = props;
   const [isShowKeyboard, setIsShowKeyboard] = useState<boolean>(showKeyboard);
 
   useEffect(() => {
@@ -90,7 +91,7 @@ export default function CallKeyboard(props: ICallKeyboard) {
           </button>
         </section>
 
-        <button className="bg-crm-green-300 p-3 w-[fit-content] rounded-full ">
+        <button onClick={callAction} className="bg-crm-green-300 p-3 w-[fit-content] rounded-full ">
           <PhoneFilledIcon fill="#fff" />
         </button>
       </div>

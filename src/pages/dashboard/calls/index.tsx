@@ -102,7 +102,14 @@ export default function Calls() {
             </button>
           </div>
 
-          <CallKeyboard setShowKeyboard={setIsShowKeyboard} showKeyboard={isShowKeyboard} changeFunc={setPhoneNumber} targetValue={phoneNumber} className="mx-auto my-6" />
+          <CallKeyboard
+            callAction={() => console.log(`calling ${phoneNumber}...`)}
+            setShowKeyboard={setIsShowKeyboard}
+            showKeyboard={isShowKeyboard}
+            changeFunc={setPhoneNumber}
+            targetValue={phoneNumber}
+            className="mx-auto my-6"
+          />
         </section>
       </div>
     </DashboardLayout>
