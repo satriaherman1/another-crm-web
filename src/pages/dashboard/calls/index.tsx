@@ -2,11 +2,12 @@ import CallKeyboard from "@src/components/common/CallKeyboard";
 import Dropdown from "@src/components/common/Dropdown";
 import { AddIcon, CallSlashIcon, ClocklIcon, DeleteSquareIcon, HeadphoneIcon, LevelIcon, MicrophoneIcon, MoreRectangleIcon, PhoneFilledIcon, VoiceSquareIcon } from "@src/components/common/Icon";
 import DashboardLayout from "@src/layout/dashboard-layout";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function Calls() {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [isShowKeyboard, setIsShowKeyboard] = useState<boolean>(false);
+  const keypadInputRef = useRef<HTMLInputElement>(null);
   const callsFilter = [
     {
       label: "Log Call & Complete",
@@ -84,6 +85,11 @@ export default function Calls() {
             <input
               onClick={() => {
                 setIsShowKeyboard(true);
+              }}
+              ref={keypadInputRef}
+              onFocus={() => {
+                event?.preventDefault();
+                keypadInputRef.current?.blur();
               }}
               type="text"
               value={phoneNumber}
