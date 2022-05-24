@@ -1,13 +1,13 @@
 .crm-keypad-container {
   max-height: 0;
   overflow: hidden;
+  transition: 0.5s;
 
   &.show-keyboard {
     max-height: 140vh;
   }
   .crm-keypad {
     @apply flex flex-col items-center gap-y-10 gap-x-10 text-white w-[fit-content];
-    transition: 0.3s;
 
     section {
       button {
