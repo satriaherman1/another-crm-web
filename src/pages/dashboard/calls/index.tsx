@@ -1,7 +1,7 @@
+import CallKeyboard from "@src/components/common/CallKeyboard";
 import Dropdown from "@src/components/common/Dropdown";
 import { AddIcon, CallSlashIcon, ClocklIcon, HeadphoneIcon, LevelIcon, MicrophoneIcon, MoreRectangleIcon, PhoneFilledIcon, VoiceSquareIcon } from "@src/components/common/Icon";
 import DashboardLayout from "@src/layout/dashboard-layout";
-import KioskBoard from "kioskboard";
 import { useEffect } from "react";
 
 export default function Calls() {
@@ -12,17 +12,7 @@ export default function Calls() {
     },
   ];
 
-  useEffect(() => {
-    KioskBoard.run(".calls-keypad", {
-      keysArrayOfObjects: [
-        { "0": "A", "1": "B", "2": "C" },
-        { "0": "D", "1": "E", "2": "F" },
-      ],
-      keysNumpadArrayOfNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
-
-      theme: "dark",
-    });
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <DashboardLayout>
@@ -89,16 +79,10 @@ export default function Calls() {
           </div>
         </section>
 
-        <section className="bg-crm-dark-300">
-          <input
-            onClick={() => {
-              window?.scrollTo(0, 100);
-            }}
-            type="text"
-            className="calls-keypad w-full border-0 py-4 text-white bg-transparent px-4 outline-0"
-            data-kioskboard-type="numpad"
-            placeholder="type phone number here"
-          />
+        <section className="bg-crm-dark-300 py-4">
+          <input type="text" className="calls-keypad w-full border-0 py-4 text-white bg-transparent px-4 outline-0" data-kioskboard-type="numpad" placeholder="type phone number here" />
+
+          <CallKeyboard className="mx-auto my-6" />
         </section>
       </div>
     </DashboardLayout>

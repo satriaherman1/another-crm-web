@@ -5,7 +5,7 @@ interface ICrmTableProps {
   columns: ICrmColumns[];
   rows: ICrmRows[];
   className?: string;
-  head: React.ReactElement;
+  head?: React.ReactElement;
   heading: any;
 }
 

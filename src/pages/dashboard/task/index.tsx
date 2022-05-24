@@ -440,7 +440,7 @@ export default function Task() {
                 <button className="text-crm-primary">Clear All</button>
               </div>
 
-              <DashboardTaskTable className="max-w-[800px]" heading={<TaskHeading />} rows={rows} columns={columns} head={false} />
+              <DashboardTaskTable className="max-w-[800px]" heading={<TaskHeading />} rows={rows} columns={columns} />
             </>
           )}
         </section>
