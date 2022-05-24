@@ -20,7 +20,7 @@ export default function Dropdown(props: ICrmDropdown) {
 
   return (
     <>
-      <div className={`relative crm-dropdown max-w-[500px] z-20 ${className ?? ""}`}>
+      <div className={`relative crm-dropdown max-w-[500px]  ${className ?? ""}`}>
         <select id={id ?? ""} name={name ?? ""} onClick={() => handleClickDropdown()} ref={selectRef} className={`${dropdownVariantClass} ${borderVariantClass ?? "base-border"}  py-2 pl-3 pr-[30px]`}>
           {optList.map((opt) => (
             <option key={opt.value} value={opt.value}>
