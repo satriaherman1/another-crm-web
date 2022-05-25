@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from "react";
 export default function Calls() {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [isShowKeyboard, setIsShowKeyboard] = useState<boolean>(false);
-  const keypadInputRef = useRef<HTMLInputElement>(null);
+
   const callsFilter = [
     {
       label: "Log Call & Complete",
@@ -70,9 +70,10 @@ export default function Calls() {
               <button className="ml-6">
                 <CallSlashIcon />
               </button>
-              <button className="ml-6 p-2 rounded-md bg-crm-gray-300 border border-crm-gray-200">
+              <button className={`ml-6 p-2 rounded-md ${isShowKeyboard && "bg-crm-gray-300 border border-crm-gray-200"} `} onClick={() => setIsShowKeyboard(true)}>
                 <MoreRectangleIcon />
               </button>
+
               <button className="ml-5">
                 <LevelIcon />
               </button>
@@ -80,43 +81,15 @@ export default function Calls() {
           </div>
         </section>
 
-        <section className="bg-crm-dark-300 pb-4">
-          <div className="flex">
-            <input
-              onClick={() => {
-                setIsShowKeyboard(true);
-              }}
-              ref={keypadInputRef}
-              onFocus={() => {
-                event?.preventDefault();
-                keypadInputRef.current?.blur();
-              }}
-              type="text"
-              value={phoneNumber}
-              className="calls-keypad w-full border-0 py-4 text-white bg-transparent px-4 outline-0"
-              placeholder="type phone number here"
-            />
-            <button
-              className="bg-crm-red  rounded "
-              onClick={() => {
-                const val = phoneNumber.slice(0, phoneNumber.length - 1);
-
-                setPhoneNumber(val);
-              }}
-            >
-              <DeleteSquareIcon width="80px" fill="#fff" />
-            </button>
-          </div>
-
-          <CallKeyboard
-            callAction={() => console.log(`calling ${phoneNumber}...`)}
-            setShowKeyboard={setIsShowKeyboard}
-            showKeyboard={isShowKeyboard}
-            changeFunc={setPhoneNumber}
-            targetValue={phoneNumber}
-            className="mx-auto my-6"
-          />
-        </section>
+        <CallKeyboard
+          setTargetValue={setPhoneNumber}
+          callAction={() => console.log(`calling ${phoneNumber}...`)}
+          setShowKeyboard={setIsShowKeyboard}
+          showKeyboard={isShowKeyboard}
+          changeFunc={setPhoneNumber}
+          targetValue={phoneNumber}
+          className="mx-auto my-6"
+        />
       </div>
     </DashboardLayout>
   );

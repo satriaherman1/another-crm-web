@@ -1,37 +1,66 @@
 import { CloseIcon, DeleteSquareIcon, PhoneFilledIcon } from "@src/components/common/Icon";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./styles.scss";
 
 interface ICallKeyboard {
   className?: string;
   changeFunc: (state: string) => void;
   targetValue: string;
+  setTargetValue: (value: any) => any;
   showKeyboard: boolean;
   setShowKeyboard: (state?: any) => any;
   callAction?: (state?: any) => any;
 }
 
 export default function CallKeyboard(props: ICallKeyboard) {
-  const { className, changeFunc, targetValue, showKeyboard, setShowKeyboard, callAction } = props;
+  const { className, changeFunc, targetValue, showKeyboard, setShowKeyboard, callAction, setTargetValue } = props;
   const [isShowKeyboard, setIsShowKeyboard] = useState<boolean>(showKeyboard);
+  const keypadInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     setIsShowKeyboard(showKeyboard);
   }, [showKeyboard]);
 
   return (
-    <div className={`${isShowKeyboard && "show-keyboard"} crm-keypad-container w-full`}>
+    <div className={`${isShowKeyboard && "show-keyboard"}  crm-keypad-container `}>
       <button
         onClick={() => {
           setIsShowKeyboard(false);
           setShowKeyboard(false);
         }}
-        className="flex gap-x-2 items-center ml-8 "
+        className="flex gap-x-2 items-center absolute top-[-3%] left-[-4%] p-1 bg-crm-gray-400 rounded-full border border-gray-500"
       >
-        Keypad <CloseIcon />
+        <CloseIcon fill="#fff" />
       </button>
+      <div className="flex">
+        <input
+          onClick={() => {
+            setIsShowKeyboard(true);
+          }}
+          ref={keypadInputRef}
+          onFocus={() => {
+            event?.preventDefault();
+            keypadInputRef.current?.blur();
+          }}
+          type="text"
+          value={targetValue}
+          className="calls-keypad w-full border-0 py-4 text-white bg-transparent px-4 outline-0 border-b border-gray-700"
+          placeholder="type phone number "
+        />
+        <button
+          className="bg-crm-red  rounded "
+          onClick={() => {
+            const val = targetValue.slice(0, targetValue.length - 1);
+
+            setTargetValue(val);
+          }}
+        >
+          <DeleteSquareIcon width="80px" fill="#fff" />
+        </button>
+      </div>
+
       <div className={`crm-keypad ${className ?? ""} `}>
-        <section className="flex gap-x-20">
+        <section className="flex gap-x-15">
           <button className="flex flex-col items-center gap-y-1" onClick={(state) => changeFunc(targetValue + "1")}>
             <span className="text-[24px]">1</span>
             <span className="text-crm-gray-600 font-normal invisible">ABC</span>
@@ -46,7 +75,7 @@ export default function CallKeyboard(props: ICallKeyboard) {
           </button>
         </section>
 
-        <section className="flex gap-x-20">
+        <section className="flex gap-x-15">
           <button className="flex flex-col items-center gap-y-1" onClick={(state) => changeFunc(targetValue + "4")}>
             <span className="text-[24px]">4</span>
             <span className="text-crm-gray-600 font-normal ">GHI</span>
@@ -61,7 +90,7 @@ export default function CallKeyboard(props: ICallKeyboard) {
           </button>
         </section>
 
-        <section className="flex gap-x-20">
+        <section className="flex gap-x-15">
           <button className="flex flex-col items-center gap-y-1" onClick={(state) => changeFunc(targetValue + "7")}>
             <span className="text-[24px]">7</span>
             <span className="text-crm-gray-600 font-normal ">PQRS</span>
@@ -76,7 +105,7 @@ export default function CallKeyboard(props: ICallKeyboard) {
           </button>
         </section>
 
-        <section className="flex gap-x-20">
+        <section className="flex gap-x-15">
           <button className="flex flex-col items-center gap-y-1" onClick={(state) => changeFunc(targetValue + "*")}>
             <span className="text-[24px]">*</span>
             <span className="text-crm-gray-600 font-normal invisible">ABC1</span>
