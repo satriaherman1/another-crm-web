@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import "./styles.scss";
 
 export default function Dropdown(props: ICrmDropdown) {
-  const { className, optList, onClick, variant, onChange, paddingClassName, id, name, borderVariantClass, placeholder } = props;
+  const { className, optList, onClick, variant, onChange, paddingClassName, id, name, borderVariantClass, placeholder, isNoMaxWidth } = props;
   const [showOptLabel, setShowOptLabel] = useState<boolean>(false);
   const selectRef = useRef<HTMLSelectElement>(null);
 
@@ -20,8 +20,15 @@ export default function Dropdown(props: ICrmDropdown) {
 
   return (
     <>
-      <div className={`relative crm-dropdown max-w-[500px]  ${className ?? ""}`}>
-        <select id={id ?? ""} name={name ?? ""} onClick={() => handleClickDropdown()} ref={selectRef} className={`${dropdownVariantClass} ${borderVariantClass ?? "base-border"}  py-2 pl-3 pr-[30px]`}>
+      <div className={`relative crm-dropdown ${!isNoMaxWidth ? "max-w-[500px]" : ""}  ${className ?? ""}`}>
+        <select
+          placeholder={placeholder}
+          id={id ?? ""}
+          name={name ?? ""}
+          onClick={() => handleClickDropdown()}
+          ref={selectRef}
+          className={`${dropdownVariantClass} ${borderVariantClass ?? "base-border"}  py-2 pl-3 pr-[30px]`}
+        >
           {optList.map((opt) => (
             <option key={opt.value} value={opt.value}>
               {opt.label}

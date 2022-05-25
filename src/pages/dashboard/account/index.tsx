@@ -9,9 +9,14 @@ import { useState } from "react";
 import Button from "@src/components/common/Button";
 import ContactInfoBox from "@src/components/pages/dashboard/account/contact-info-box";
 import AccountInfoBox from "@src/components/pages/dashboard/account/account-info-box";
+import useLocalData from "@src/utility/hooks/useLocalData";
+import Modal from "@src/components/common/Modal";
+import Input from "@src/components/common/Input";
+import Dropdown from "@src/components/common/Dropdown";
 
 export default function Account() {
   const [activeTab, setActiveTab] = useState<string>("account");
+  const [showModal, setShowModal] = useState<boolean>(false);
   const newTaskData = [
     {
       date: "06/01/22 04:11:05",
@@ -95,6 +100,106 @@ export default function Account() {
     },
   ];
 
+  const timeZone = [
+    {
+      label: "GMT",
+      value: "GMT",
+    },
+  ];
+  const ownerList = [
+    {
+      label: "Jordan Olivas",
+      value: "Jordan Olivas",
+    },
+  ];
+  const prospectStageList = [
+    {
+      label: "No Stage",
+      value: "no stage",
+    },
+  ];
+
+  const accountList = [
+    {
+      label: "admin",
+      value: "admin",
+    },
+  ];
+
+  const AddAccountForm = () => (
+    <div className="flex flex-col gap-y-6 my-5 max-h-[90vh]">
+      <div className="flex gap-x-5 ">
+        <section>
+          <label htmlFor="firstName">First Name</label>
+          <MiniInput variant="crm-transparent" id="firstName" type="text" className="block py-2 mt-2 min-w-[250px]" />
+        </section>
+        <section>
+          <label htmlFor="lastName">Last Name</label>
+          <MiniInput variant="crm-transparent" id="lastName" type="text" className="block py-2 mt-2 min-w-[250px]" />
+        </section>
+      </div>
+      <div className="flex gap-x-5 ">
+        <section>
+          <label htmlFor="email">Email</label>
+          <MiniInput variant="crm-transparent" id="email" type="text" className="block py-2 mt-2 min-w-[250px]" />
+        </section>
+        <section>
+          <label htmlFor="company">Company</label>
+          <MiniInput variant="crm-transparent" id="lastName" type="text" className="block py-2 mt-2 min-w-[250px]" />
+        </section>
+      </div>
+      <div className="flex gap-x-5 ">
+        <section>
+          <label htmlFor="title">Title</label>
+          <MiniInput variant="crm-transparent" id="title" type="text" className="block py-2 mt-2 min-w-[250px]" />
+        </section>
+        <section>
+          <label htmlFor="timeZone">Time Zone(IANA)</label>
+          <Dropdown variant="outlined" optList={timeZone} id="timeZone" placeholder="Choose" className="block py-2  min-w-[250px]" />
+        </section>
+      </div>
+      <div className="flex gap-x-5 ">
+        <section>
+          <label htmlFor="owner">Owner</label>
+          <MiniInput variant="crm-transparent" id="title" type="text" className="block py-2 mt-2 min-w-[250px]" />
+        </section>
+        <section>
+          <label htmlFor="prospectStage">Prospect Stage</label>
+          <Dropdown variant="outlined" optList={prospectStageList} id="prospectStage" placeholder="Choose" className="block py-2  min-w-[250px]" />
+        </section>
+      </div>
+      <div className="flex gap-x-5 ">
+        <section className="w-full">
+          <label htmlFor="tags">Tags</label>
+          <MiniInput placeholder="enter tags..." variant="crm-transparent" id="tags" type="text" className="block py-2 mt-2 min-w-[250px] w-full" isNoMaxWidth />
+        </section>
+      </div>
+      <div className="flex gap-x-5 ">
+        <section className="w-full">
+          <label htmlFor="account">Account</label>
+          <Dropdown isNoMaxWidth variant="outlined" optList={accountList} id="prospectStage" placeholder="account" className="block py-2  min-w-[250px] w-full" />
+        </section>
+      </div>
+
+      <section className="flex justify-between items-center text-[14px]">
+        <p>
+          <a href="" className="underline">
+            Terms of Service
+          </a>{" "}
+          and{" "}
+          <a href="" className="underline">
+            Privacy Policy
+          </a>{" "}
+          .
+        </p>
+
+        <Button variant="primary" onClick={() => setShowModal(false)}>
+          Submit
+        </Button>
+      </section>
+    </div>
+  );
+
   return (
     <DashboardLayout>
       <div className="flex lg:gap-x-2 lg:justify-between lg:gap-0 order-1 flex-wrap lg:flex-nowrap mt-6 ">
@@ -133,7 +238,7 @@ export default function Account() {
 
         <div className="min-w-[250px] w-full md:w-[fit-content] lg:order-last text-white lg:basis-[25%]">
           <div className="w-[fit-content] lg:ml-auto mt-5 md:mt-0">
-            <Button variant="primary" className="h-[fit-content]" paddingClassName="p-2">
+            <Button onClick={() => setShowModal(true)} variant="primary" className="h-[fit-content]" paddingClassName="p-2">
               <AddIcon />
             </Button>
             <button className="ml-2 rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200 p-2">
@@ -160,6 +265,10 @@ export default function Account() {
           )}
         </div>
       </div>
+
+      <Modal className="text-white" visible={showModal} onClose={() => setShowModal(false)} title="Account">
+        <AddAccountForm />
+      </Modal>
     </DashboardLayout>
   );
 }
