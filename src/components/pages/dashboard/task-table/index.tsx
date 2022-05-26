@@ -10,11 +10,11 @@ interface ICrmTableProps {
   className?: string;
   head?: React.ReactElement;
   heading: any;
-  checkAll: boolean;
+  checkAll?: boolean;
 }
 
 export default function DashboardTaskTable(props: ICrmTableProps) {
-  const { className, columns, rows, head, heading, checkAll } = props;
+  const { className, columns, rows, head, heading } = props;
   const [isCheckAll, setIsCheckAll] = useState(false);
   const [isCheck, setIsCheck] = useState<any>([]);
   const [list, setList] = useState<any>([]);
