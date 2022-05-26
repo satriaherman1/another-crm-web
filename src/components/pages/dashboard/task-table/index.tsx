@@ -39,7 +39,7 @@ export default function DashboardTaskTable(props: ICrmTableProps) {
 
   console.log(isCheck);
 
-  const catalog = list.map(({ id, name }: any) => {
+  const catalog = rows.map(({ id, name }: any) => {
     return (
       <>
         <Checkbox key={id} name={name} id={id} onClick={handleClick} checked={isCheck.includes(id)} />
@@ -110,7 +110,7 @@ export default function DashboardTaskTable(props: ICrmTableProps) {
             <tr className="">
               <td className="p-2 w-4">
                 <div className="flex items-center">
-                  <Checkbox onChange={(e) => console.log(e.target.checked)} />
+                  <Checkbox onChange={(e) => console.log(e.target.checked)} checked={checkAll} />
                 </div>
               </td>
               {r?.value?.map((val) => (
