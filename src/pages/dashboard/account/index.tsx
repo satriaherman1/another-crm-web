@@ -184,7 +184,7 @@ export default function Account() {
           </div>
         </div>
 
-        <div className="min-w-[250px] w-full md:w-[fit-content] lg:order-last text-white lg:basis-[25%]">
+        <div className="min-w-[250px] w-full lg:w-[fit-content] lg:order-last text-white lg:basis-[25%]">
           <div className="w-[fit-content] lg:ml-auto mt-5 md:mt-0">
             <Button onClick={() => setShowModal(true)} variant="primary" className="h-[fit-content]" paddingClassName="p-2">
               <AddIcon />
