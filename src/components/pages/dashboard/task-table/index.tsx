@@ -1,4 +1,7 @@
+import Button from "@src/components/common/Button";
 import Checkbox from "@src/components/common/Checkbox";
+import InputRadio from "@src/components/common/InputRadio";
+import useLocalData from "@src/utility/hooks/useLocalData";
 import React, { useEffect, useState } from "react";
 
 interface ICrmTableProps {
@@ -12,44 +15,67 @@ interface ICrmTableProps {
 
 export default function DashboardTaskTable(props: ICrmTableProps) {
   const { className, columns, rows, head, heading, checkAll } = props;
-  // const [isCheckAll, setIsCheckAll] = useState(false);
-  // const [isCheck, setIsCheck] = useState([]);
-  // const [list, setList] = useState([]);
+  const [isCheckAll, setIsCheckAll] = useState(false);
+  const [isCheck, setIsCheck] = useState<any>([]);
+  const [list, setList] = useState<any>([]);
 
-  // useEffect(() => {
-  //   setList(Catalogues);
-  // }, [list]);
+  const { dispatch } = useLocalData();
 
-  // const handleSelectAll = (e: any) => {
-  //   setIsCheckAll(!isCheckAll);
-  //   setIsCheck(list.map((li) => li.id));
-  //   if (isCheckAll) {
-  //     setIsCheck([]);
-  //   }
-  // };
+  const handleSelectAll = (e: any) => {
+    setIsCheckAll(!isCheckAll);
+    setIsCheck(list.map((li: any) => li.id));
+    if (isCheckAll) {
+      setIsCheck([]);
+    }
+  };
 
-  // const handleClick = (e: any) => {
-  //   const { id, checked } = e.target;
-  //   setIsCheck([...isCheck, id]);
-  //   if (!checked) {
-  //     setIsCheck(isCheck.filter((item) => item !== id));
-  //   }
-  // };
+  const handleClick = (e: any) => {
+    const { id, checked } = e.target;
+    setIsCheck([...isCheck, id]);
+    if (!checked) {
+      setIsCheck(isCheck.filter((item: any) => item !== id));
+    }
+  };
 
-  // console.log(isCheck);
+  console.log(isCheck);
 
-  // const catalog = list.map(({ id, name }) => {
-  //   return (
-  //     <>
-  //       <Checkbox key={id} name={name} id={id} handleClick={handleClick} isChecked={isCheck.includes(id)} />
-  //       {name}
-  //     </>
-  //   );
-  // });
+  const catalog = list.map(({ id, name }: any) => {
+    return (
+      <>
+        <Checkbox key={id} name={name} id={id} onClick={handleClick} checked={isCheck.includes(id)} />
+        {name}
+      </>
+    );
+  });
+
+  const TableHeadAdvanced = () => (
+    <section className="flex justify-between w-full pt-4 gap-10 items-center">
+      <div className="flex ml-2 whitespace-nowrap">
+        <Checkbox name="selectAll" id="selectAll" onClick={handleSelectAll} checked={isCheckAll} />
+        <p className="text-white ml-4 w-[fit-content]">Upcoming Task</p>
+      </div>
+      <div className="flex items-center whitespace-nowrap">
+        <p className="text-crm-mutted-blue">Sort By:</p>
+        <InputRadio className="ml-3 " name="sort" label="Priority" />
+        <InputRadio className="ml-2" name="sort" label="Prospec Engagement" />
+      </div>
+      <Button
+        onClick={() =>
+          dispatch({
+            type: "SHOW_PLUGIN_MODAL",
+          })
+        }
+        variant="primary"
+        className="whitespace-nowrap ml-5"
+      >
+        Start 4 Task
+      </Button>
+    </section>
+  );
 
   return (
     <div className={` overflow-x-scroll  `}>
-      {head ?? ""}
+      {head ?? <TableHeadAdvanced />}
 
       <section className="flex my-4 border-b border-crm-gray-350">{heading}</section>
 

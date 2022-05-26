@@ -1,5 +1,17 @@
 import DashboardLayout from "@src/layout/dashboard-layout";
-import { EyeIcon, FilterIcon, FilterOutlinedIcon, FilterRemoveOutlined, MailIcon, MonitorIcon, SendIcon, TickCircleIcon, UserOutlined, VideoCircleIcon } from "@src/components/common/Icon";
+import {
+  Calendar2Icon,
+  EyeIcon,
+  FilterIcon,
+  FilterOutlinedIcon,
+  FilterRemoveOutlined,
+  MailIcon,
+  MonitorIcon,
+  SendIcon,
+  TickCircleIcon,
+  UserOutlined,
+  VideoCircleIcon,
+} from "@src/components/common/Icon";
 import DashboardActivityList from "@src/components/pages/dashboard/activity-list";
 import DashboardStatistic from "@src/components/pages/dashboard/statistic";
 
@@ -74,8 +86,8 @@ export default function Dashboard() {
           <div className="flex">
             <NestedFilter icon={<FilterOutlinedIcon />} label="Type" filters={filterTypeList} />
             <NestedFilter icon={<UserOutlined />} label="Person" filters={filterTypeList} />
-            <NestedFilter icon={<UserOutlined />} label="Date" filters={filterTypeList} />
-            <button className="rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200">
+            <NestedFilter icon={<Calendar2Icon width="21" height="21" fill="#fff" />} label="Date" filters={filterTypeList} />
+            <button className="rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200 p-2">
               <FilterRemoveOutlined />
             </button>
           </div>

@@ -13,7 +13,7 @@ export default function NestedFilter(props: NestedFilter) {
         <span className="ml-2 capitalize">{label}</span>
         <ArrowDownOutlinedIcon className="ml-3" fill="#fff" />
       </button>
-      <div className={`absolute min-w-[160px]  top-[20%] left-[50%] ${!openFilter ? "hidden z-30" : "block z-0"}`}>
+      <div className={`absolute min-w-[160px]  top-[100%] left-[0%] ${!openFilter ? "hidden z-30" : "block z-0"}`}>
         <div className="crm-check-all py-3 px-4 bg-crm-gray-300 flex items-center rounded-t-md w-full">
           <input type="checkbox" />
           <span className="ml-2">All</span>

@@ -26,7 +26,7 @@ export function ActivityIcon(props: IconProps): ReactElement {
 export function Calendar2Icon(props: IconProps): ReactElement {
   const { className, fill, width, height } = props;
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className ?? ""}>
+    <svg width={width ?? "24"} height={height ?? "24"} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className ?? ""}>
       <path d="M8 2V5" stroke={fill ? fill : "#98A5CD"} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M16 2V5" stroke={fill ? fill : "#98A5CD"} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M3.5 9.09H20.5" stroke={fill ? fill : "#98A5CD"} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
