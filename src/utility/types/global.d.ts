@@ -119,3 +119,18 @@ declare interface ILocalData {
   store: any;
   dispatch: any;
 }
+
+declare interface NestedFilter {
+  label: string;
+  icon: any;
+  filters: INestedFilterList[];
+}
+
+interface INestedFilterList {
+  name: string;
+  filterList: INestedFilterListChild[];
+}
+
+declare interface INestedFilterListChild {
+  label: string;
+}

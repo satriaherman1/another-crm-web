@@ -1,5 +1,5 @@
 import Checkbox from "@src/components/common/Checkbox";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 interface ICrmTableProps {
   columns: ICrmColumns[];
@@ -7,10 +7,46 @@ interface ICrmTableProps {
   className?: string;
   head?: React.ReactElement;
   heading: any;
+  checkAll: boolean;
 }
 
 export default function DashboardTaskTable(props: ICrmTableProps) {
-  const { className, columns, rows, head, heading } = props;
+  const { className, columns, rows, head, heading, checkAll } = props;
+  // const [isCheckAll, setIsCheckAll] = useState(false);
+  // const [isCheck, setIsCheck] = useState([]);
+  // const [list, setList] = useState([]);
+
+  // useEffect(() => {
+  //   setList(Catalogues);
+  // }, [list]);
+
+  // const handleSelectAll = (e: any) => {
+  //   setIsCheckAll(!isCheckAll);
+  //   setIsCheck(list.map((li) => li.id));
+  //   if (isCheckAll) {
+  //     setIsCheck([]);
+  //   }
+  // };
+
+  // const handleClick = (e: any) => {
+  //   const { id, checked } = e.target;
+  //   setIsCheck([...isCheck, id]);
+  //   if (!checked) {
+  //     setIsCheck(isCheck.filter((item) => item !== id));
+  //   }
+  // };
+
+  // console.log(isCheck);
+
+  // const catalog = list.map(({ id, name }) => {
+  //   return (
+  //     <>
+  //       <Checkbox key={id} name={name} id={id} handleClick={handleClick} isChecked={isCheck.includes(id)} />
+  //       {name}
+  //     </>
+  //   );
+  // });
+
   return (
     <div className={` overflow-x-scroll  `}>
       {head ?? ""}
@@ -48,7 +84,7 @@ export default function DashboardTaskTable(props: ICrmTableProps) {
             <tr className="">
               <td className="p-2 w-4">
                 <div className="flex items-center">
-                  <Checkbox />
+                  <Checkbox onChange={(e) => console.log(e.target.checked)} />
                 </div>
               </td>
               {r?.value?.map((val) => (

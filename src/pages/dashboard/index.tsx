@@ -1,13 +1,67 @@
 import DashboardLayout from "@src/layout/dashboard-layout";
-import { EyeIcon, FilterIcon, MailIcon, MonitorIcon, SendIcon, TickCircleIcon, VideoCircleIcon } from "@src/components/common/Icon";
+import { EyeIcon, FilterIcon, FilterOutlinedIcon, FilterRemoveOutlined, MailIcon, MonitorIcon, SendIcon, TickCircleIcon, UserOutlined, VideoCircleIcon } from "@src/components/common/Icon";
 import DashboardActivityList from "@src/components/pages/dashboard/activity-list";
 import DashboardStatistic from "@src/components/pages/dashboard/statistic";
 
 import "./styles.scss";
 import DashboardTaskList from "@src/components/pages/dashboard/task-list";
 import moment from "moment";
+import NestedFilter from "@src/components/common/NestedFilter";
 
 export default function Dashboard() {
+  const filterTypeList: INestedFilterList[] = [
+    {
+      name: "email",
+      filterList: [
+        {
+          label: "opened",
+        },
+        {
+          label: "clicked",
+        },
+        {
+          label: "replied",
+        },
+        {
+          label: "received",
+        },
+      ],
+    },
+    {
+      name: "calls",
+      filterList: [
+        {
+          label: "opened",
+        },
+        {
+          label: "clicked",
+        },
+        {
+          label: "replied",
+        },
+        {
+          label: "received",
+        },
+      ],
+    },
+    {
+      name: "sms",
+      filterList: [
+        {
+          label: "opened",
+        },
+        {
+          label: "clicked",
+        },
+        {
+          label: "replied",
+        },
+        {
+          label: "received",
+        },
+      ],
+    },
+  ];
   return (
     <DashboardLayout>
       <div className="flex flex-col md:flex-row  mt-8 w-full gap-5 ">
@@ -18,10 +72,12 @@ export default function Dashboard() {
 
         <section className=" py-4 bg-crm-dark-300 md:w-[40%] h-[fit-content] rounded-md">
           <div className="flex">
-            <button className="p-2 rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200">
-              <FilterIcon />
+            <NestedFilter icon={<FilterOutlinedIcon />} label="Type" filters={filterTypeList} />
+            <NestedFilter icon={<UserOutlined />} label="Person" filters={filterTypeList} />
+            <NestedFilter icon={<UserOutlined />} label="Date" filters={filterTypeList} />
+            <button className="rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200">
+              <FilterRemoveOutlined />
             </button>
-            <button className="py-2 px-3 text-white font-normal rounded-md border border-crm-gray-350 ml-2 bg-crm-gray-200">Clear Filters</button>
           </div>
 
           <div className="w-full bg-crm-gray-400 mt-4 py-3 px-5 text-crm-gray border-y border-crm-gray-350">2 weeks ago</div>

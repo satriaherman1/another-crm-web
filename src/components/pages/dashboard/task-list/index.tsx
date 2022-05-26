@@ -5,9 +5,11 @@ import Checkbox from "@src/components/common/Checkbox";
 import InputRadio from "@src/components/common/InputRadio";
 import Button from "@src/components/common/Button";
 import useLocalData from "@src/utility/hooks/useLocalData";
+import { useState } from "react";
 
 export default function DashboardTaskList() {
   const formatService = new FormatService();
+  const [checkAll, setCheckAll] = useState<boolean>(false);
   const { dispatch } = useLocalData();
 
   const DueDateColumn = (props: IDueDateTableColumn) => {
@@ -163,7 +165,7 @@ export default function DashboardTaskList() {
   const TableHeadAdvanced = () => (
     <section className="flex justify-between w-full pt-4 gap-10 items-center">
       <div className="flex ml-2 whitespace-nowrap">
-        <Checkbox />
+        <Checkbox onChange={() => setCheckAll(!checkAll)} checked={checkAll} />
         <p className="text-white ml-4 w-[fit-content]">Upcoming Task</p>
       </div>
       <div className="flex items-center whitespace-nowrap">
@@ -187,7 +189,7 @@ export default function DashboardTaskList() {
 
   return (
     <section className="text-white mt-5 mb-9 basis-[58%] overflow-y-hidden bg-crm-dark-300 text-white w-full px-5 py-3 rounded-md">
-      <DashboardTaskTable heading={<TaskHeading />} head={<TableHeadAdvanced />} rows={rows} columns={columns} className="bg-transparent" />
+      <DashboardTaskTable checkAll={checkAll} heading={<TaskHeading />} head={<TableHeadAdvanced />} rows={rows} columns={columns} className="bg-transparent" />
     </section>
   );
 }

@@ -898,3 +898,98 @@ export function DeleteSquareIcon(props: IconProps): ReactElement {
     </svg>
   );
 }
+
+export function FilterOutlinedIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width={width ?? "20"} height={height ?? "20"} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M4.50016 1.75H15.5002C16.4168 1.75 17.1668 2.5 17.1668 3.41667V5.25C17.1668 5.91667 16.7502 6.75 16.3335 7.16667L12.7502 10.3333C12.2502 10.75 11.9168 11.5833 11.9168 12.25V15.8333C11.9168 16.3333 11.5835 17 11.1668 17.25L10.0002 18C8.91683 18.6667 7.41683 17.9167 7.41683 16.5833V12.1667C7.41683 11.5833 7.0835 10.8333 6.75016 10.4167L3.5835 7.08333C3.16683 6.66667 2.8335 5.91667 2.8335 5.41667V3.5C2.8335 2.5 3.5835 1.75 4.50016 1.75Z"
+        stroke={fill ?? "white"}
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M9.10833 1.75L5 8.33333" stroke={fill ?? "white"} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function UserOutlined(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width={width ?? "20"} height={height ?? "20"} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M10.0002 10C12.3013 10 14.1668 8.13452 14.1668 5.83333C14.1668 3.53214 12.3013 1.66666 10.0002 1.66666C7.69898 1.66666 5.8335 3.53214 5.8335 5.83333C5.8335 8.13452 7.69898 10 10.0002 10Z"
+        stroke={fill ?? "white"}
+        strokeWidth="1.5"
+        stroke-linecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M17.1585 18.3333C17.1585 15.1083 13.9501 12.5 10.0001 12.5C6.05013 12.5 2.8418 15.1083 2.8418 18.3333"
+        stroke={fill ?? "white"}
+        strokeWidth="1.5"
+        stroke-linecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function UserOutlinedIcon(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width={width ?? "20"} height={height ?? "20"} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M10.0002 10C12.3013 10 14.1668 8.13452 14.1668 5.83333C14.1668 3.53214 12.3013 1.66666 10.0002 1.66666C7.69898 1.66666 5.8335 3.53214 5.8335 5.83333C5.8335 8.13452 7.69898 10 10.0002 10Z"
+        stroke={fill ?? "white"}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M17.1585 18.3333C17.1585 15.1083 13.9501 12.5 10.0001 12.5C6.05013 12.5 2.8418 15.1083 2.8418 18.3333"
+        stroke={fill ?? "white"}
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function FilterRemoveOutlined(props: IconProps): ReactElement {
+  const { className, fill, width, height } = props;
+  return (
+    <svg className={className ?? ""} width={width ?? "20"} height={height ?? "20"} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M11.175 17.325L9.99997 18.0833C8.9083 18.7583 7.39163 18 7.39163 16.65V12.1917C7.39163 11.6 7.0583 10.8417 6.71663 10.425L3.51663 7.05831C3.09163 6.63331 2.7583 5.88335 2.7583 5.37501V3.44167C2.7583 2.43334 3.51663 1.67501 4.44163 1.67501H15.5583C16.4833 1.67501 17.2416 2.43336 17.2416 3.35836V5.20834C17.2416 5.88334 16.8166 6.72501 16.4 7.14168"
+        stroke={fill ?? "white"}
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M18.0251 12.2917C18.0251 13.0333 17.8167 13.7333 17.4501 14.3333C16.7667 15.4833 15.5084 16.25 14.0667 16.25C12.6251 16.25 11.3667 15.475 10.6834 14.3333C10.3167 13.7417 10.1084 13.0333 10.1084 12.2917C10.1084 10.1083 11.8834 8.33334 14.0667 8.33334C16.2501 8.33334 18.0251 10.1083 18.0251 12.2917Z"
+        stroke={fill ?? "white"}
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M15.1249 13.325L13.0332 11.2333" stroke={fill ?? "white"} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M15.1083 11.2583L13.0166 13.35" stroke={fill ?? "white"} strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+      <path
+        d="M17.2416 3.35001V5.19999C17.2416 5.87499 16.8166 6.71667 16.4 7.14167L14.9333 8.43333C14.6583 8.36666 14.3666 8.33333 14.0666 8.33333C11.8833 8.33333 10.1083 10.1083 10.1083 12.2917C10.1083 13.0333 10.3166 13.7333 10.6833 14.3333C10.9916 14.85 11.4166 15.2916 11.9333 15.6083V15.8917C11.9333 16.4 11.6 17.075 11.175 17.325L9.99997 18.0833C8.9083 18.7583 7.39163 18 7.39163 16.65V12.1917C7.39163 11.6 7.04997 10.8417 6.71663 10.425L3.51663 7.05831C3.09997 6.63331 2.7583 5.87501 2.7583 5.37501V3.43333C2.7583 2.42499 3.51663 1.66666 4.44163 1.66666H15.5583C16.4833 1.66666 17.2416 2.42501 17.2416 3.35001Z"
+        stroke={fill ?? "white"}
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
