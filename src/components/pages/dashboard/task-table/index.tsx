@@ -110,7 +110,7 @@ export default function DashboardTaskTable(props: ICrmTableProps) {
             <tr className="">
               <td className="p-2 w-4">
                 <div className="flex items-center">
-                  <Checkbox onChange={(e) => console.log(e.target.checked)} checked={checkAll} />
+                  <Checkbox onChange={(e) => (e.currentTarget.checked = true)} checked={isCheckAll} />
                 </div>
               </td>
               {r?.value?.map((val) => (

@@ -16,7 +16,7 @@ export default function DashboardLayout(props: IDashboardLayoutProps) {
   const [isOpenNav, setIsOpenNav] = useState<boolean>(false);
 
   return (
-    <>
+    <div className="font-inter">
       <section className="fixed  top-0 z-30 w-full md:hidden  sidebar overflow-scroll duration-200 p-3  bg-crm-dark-300  text-crm-mutted-blue h-[fit-content]">
         <div className="flex justify-between px-3">
           {!isMinimize && <img src={LogoFullWhite} alt="" width={170} />}
@@ -56,6 +56,6 @@ export default function DashboardLayout(props: IDashboardLayoutProps) {
           {children}
         </section>
       </div>
-    </>
+    </div>
   );
 }

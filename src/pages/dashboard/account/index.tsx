@@ -113,7 +113,7 @@ export default function Account() {
   const columns2 = [
     {
       id: 1,
-      name: "Company",
+      name: "Company Name",
       selector: (row: any) => row.companyName,
       sortable: true,
       reorder: true,
