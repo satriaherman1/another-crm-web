@@ -21,12 +21,14 @@ export default function NestedFilter(props: NestedFilter) {
         <div className="filter-list p-2 pb-0 bg-crm-dark-300 rounded-b-md">
           {filters.map((filter) => (
             <section className="flex flex-col p-2  w-full font-normal">
-              <button onClick={(e) => e.currentTarget?.parentElement?.classList.toggle("open")} className="w-full flex">
+              <div className="flex">
                 <input type="checkbox" />
-                <label className="ml-2 capitalize">{filter.name}</label>
+                <button onClick={(e) => e.currentTarget?.parentElement?.parentElement?.classList.toggle("open")} className="w-full flex">
+                  <label className="ml-2 capitalize">{filter.name}</label>
 
-                <ArrowDownOutlinedIcon className="transform rotate-[270deg] ml-auto" fill="#98A5CD" />
-              </button>
+                  <ArrowDownOutlinedIcon className="transform rotate-[270deg] ml-auto" fill="#98A5CD" />
+                </button>
+              </div>
               <div className="filter-child-list ml-2 py-3">
                 {filter.filterList.map((fl) => (
                   <section className="flex py-2">
