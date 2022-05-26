@@ -99,6 +99,55 @@ export default function Account() {
     },
   ];
 
+  const data2 = [
+    {
+      id: 1,
+      companyName: "Jordan Olivas",
+      url: "CEO",
+
+      phone: "+91 2923 1929",
+      stage: "Discover Debit",
+    },
+  ];
+
+  const columns2 = [
+    {
+      id: 1,
+      name: "Company",
+      selector: (row: any) => row.companyName,
+      sortable: true,
+      reorder: true,
+    },
+    {
+      id: 2,
+      name: "URL",
+      selector: (row: any) => row.url,
+      sortable: true,
+      reorder: true,
+    },
+    {
+      id: 3,
+      name: "Phone",
+      selector: (row: any) => row.phone,
+      sortable: true,
+      reorder: true,
+    },
+    {
+      id: 4,
+      name: "State",
+      selector: (row: any) => row.state,
+      sortable: true,
+      reorder: true,
+    },
+    {
+      id: 4,
+      name: "Action",
+      selector: (row: any) => "...",
+      sortable: true,
+      reorder: true,
+    },
+  ];
+
   return (
     <DashboardLayout>
       <div className="flex lg:gap-x-2 lg:justify-between lg:gap-0 order-1 flex-wrap lg:flex-nowrap mt-6 ">
@@ -131,7 +180,7 @@ export default function Account() {
               </button>
             </div>
 
-            <CrmDatatable data={data} columns={columns} className="mx-1 border-0" pagination />
+            <CrmDatatable data={activeTab === "account" ? data2 : data} columns={activeTab === "account" ? columns2 : columns} className="mx-1 border-0" pagination />
           </div>
         </div>
 
