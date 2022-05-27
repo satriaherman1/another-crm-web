@@ -50,7 +50,7 @@ export default function Calls() {
 
           <div className="my-6 flex flex-col lg:flex-row gap-y-6 justify-between items-center">
             <section className="flex flex-col lg:flex-row gap-y-4 items-center">
-              <img src={"/src/assets/img/avatar-example.png"} width={60} alt="" />
+              <img src={"/assets/img/avatar-example.png"} width={60} alt="" />
 
               <div className="flex flex-col lg:ml-5">
                 <h5 className="text-white font-semibold text-[20px]">Jordan Olivas</h5>

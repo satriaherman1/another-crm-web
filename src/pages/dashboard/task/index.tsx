@@ -29,7 +29,7 @@ export default function Task() {
     );
   };
   const ImageColumnTable = () => {
-    return <img src="/src/assets/img/avatar-example.png" width="35px" height="35px" className="rounded-full" style={{ maxWidth: "unset" }} />;
+    return <img src="/assets/img/avatar-example.png" width="35px" height="35px" className="rounded-full" style={{ maxWidth: "unset" }} />;
   };
 
   const InitialName = (props: IInitialNameTableColumn) => {
