@@ -35,7 +35,7 @@ export default function CreateTask(props: ICreateTask) {
   ];
   return (
     <div className="flex flex-col gap-y-6 my-5 ">
-      <div className="flex gap-x-5 ">
+      <div className="flex flex-col md:flew-row gap-x-5 ">
         <section>
           <label htmlFor="firstName">First Name</label>
           <MiniInput variant="crm-transparent" id="firstName" type="text" className="block py-2 mt-2 min-w-[250px]" />
@@ -45,7 +45,7 @@ export default function CreateTask(props: ICreateTask) {
           <MiniInput variant="crm-transparent" id="lastName" type="text" className="block py-2 mt-2 min-w-[250px]" />
         </section>
       </div>
-      <div className="flex gap-x-5 ">
+      <div className="flex flex-col md:flew-row gap-x-5 ">
         <section>
           <label htmlFor="email">Email</label>
           <MiniInput variant="crm-transparent" id="email" type="text" className="block py-2 mt-2 min-w-[250px]" />
@@ -55,7 +55,7 @@ export default function CreateTask(props: ICreateTask) {
           <MiniInput variant="crm-transparent" id="lastName" type="text" className="block py-2 mt-2 min-w-[250px]" />
         </section>
       </div>
-      <div className="flex gap-x-5 ">
+      <div className="flex flex-col md:flew-row gap-x-5 ">
         <section>
           <label htmlFor="title">Title</label>
           <MiniInput variant="crm-transparent" id="title" type="text" className="block py-2 mt-2 min-w-[250px]" />
@@ -65,7 +65,7 @@ export default function CreateTask(props: ICreateTask) {
           <Dropdown variant="outlined" optList={timeZone} id="timeZone" placeholder="Choose" className="block py-2  min-w-[250px]" />
         </section>
       </div>
-      <div className="flex gap-x-5 ">
+      <div className="flex flex-col md:flew-row gap-x-5 ">
         <section>
           <label htmlFor="owner">Owner</label>
           <Dropdown variant="outlined" optList={ownerList} id="owner" placeholder="Choose" className="block py-2  min-w-[250px]" />
@@ -75,13 +75,13 @@ export default function CreateTask(props: ICreateTask) {
           <Dropdown variant="outlined" optList={prospectStageList} id="prospectStage" placeholder="Choose" className="block py-2  min-w-[250px]" />
         </section>
       </div>
-      <div className="flex gap-x-5 ">
+      <div className="flex flex-col md:flew-row gap-x-5 ">
         <section className="w-full">
           <label htmlFor="tags">Tags</label>
           <MiniInput placeholder="enter tags..." variant="crm-transparent" id="tags" type="text" className="block py-2 mt-2 min-w-[250px] w-full" isNoMaxWidth />
         </section>
       </div>
-      <div className="flex gap-x-5 ">
+      <div className="flex flex-col md:flew-row gap-x-5 ">
         <section className="w-full">
           <label htmlFor="account">Account</label>
           <Dropdown isNoMaxWidth variant="outlined" optList={accountList} id="prospectStage" placeholder="account" className="block py-2  min-w-[250px] w-full" />
