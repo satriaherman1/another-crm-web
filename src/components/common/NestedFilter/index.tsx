@@ -6,6 +6,7 @@ import "./styles.scss";
 export default function NestedFilter(props: NestedFilter) {
   const { label, icon, filters } = props;
   const [openFilter, setOpenFilter] = useState<boolean>();
+
   return (
     <div className="relative text-white text-[14px]">
       <button onClick={() => setOpenFilter(!openFilter)} className="items-center flex p-2 font-normal rounded-md border border-crm-gray-350 ml-3 bg-crm-gray-200">

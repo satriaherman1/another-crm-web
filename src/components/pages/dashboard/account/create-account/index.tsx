@@ -41,7 +41,7 @@ export default function CreateAccount(props: ICreateAccount) {
   ];
   return (
     <div className="flex flex-col gap-y-6 my-5 ">
-      <div className="flex flex-col md:flew-row gap-5 ">
+      <div className="flex flex-col md:flex-row gap-5 ">
         <section>
           <label htmlFor="company">Company Name</label>
           <MiniInput variant="crm-transparent" id="company" type="text" className="block py-2 mt-2 min-w-[250px]" />
@@ -51,13 +51,13 @@ export default function CreateAccount(props: ICreateAccount) {
           <MiniInput variant="crm-transparent" id="email" type="text" className="block py-2 mt-2 min-w-[250px]" />
         </section>
       </div>
-      <div className="flex flex-col md:flew-row gap-5 ">
+      <div className="flex flex-col md:flex-row gap-5 ">
         <section className="w-full">
           <label htmlFor="website">Website Url</label>
           <MiniInput variant="crm-transparent" id="website" type="text" className="block py-2 mt-2 min-w-[250px] w-full" isNoMaxWidth />
         </section>
       </div>
-      <div className="flex flex-col md:flew-row gap-5 ">
+      <div className="flex flex-col md:flex-row gap-5 ">
         <section>
           <label htmlFor="phoneNumber">Phone Number</label>
           <Dropdown optList={phoneFormatList} variant="outlined" id="phoneNumber" className="block py-2 min-w-[250px] w-full" />
@@ -67,7 +67,7 @@ export default function CreateAccount(props: ICreateAccount) {
           <Dropdown optList={stateList} variant="outlined" id="state" className="block py-2 min-w-[250px] w-full" />
         </section>
       </div>
-      <div className="flex flex-col md:flew-row gap-5 ">
+      <div className="flex flex-col md:flex-row gap-5 ">
         <section>
           <label htmlFor="city">City</label>
           <Dropdown optList={cityList} variant="outlined" id="city" className="block py-2 min-w-[250px] w-full" />
