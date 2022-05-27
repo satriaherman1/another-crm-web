@@ -1,8 +1,15 @@
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
 import faker from "@faker-js/faker";
+import DateRangePicker from "react-daterange-picker";
+import "react-daterange-picker/dist/css/react-calendar.css";
 import { useState } from "react";
 import FilterTab from "@src/components/common/FilterTab";
+import Button from "@src/components/common/Button";
+import originalMoment from "moment";
+import { extendMoment } from "moment-range";
+import { ArrowDownOutlinedIcon } from "@src/components/common/Icon";
+const moment = extendMoment(originalMoment);
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -41,6 +48,9 @@ export const data = {
 
 export default function DashboardStatistic() {
   const [activeTab, setActiveTab] = useState<string>("task");
+  const today = moment();
+  const [dateFilter, setDateFilter] = useState<any>(moment.range(today.clone().subtract(7, "days"), today.clone()));
+  const [openDateFilter, setOpenDateFilter] = useState<boolean>(false);
 
   const taskTabButton = [
     {
@@ -59,10 +69,29 @@ export default function DashboardStatistic() {
     <section className="dashboard-statistic  bg-crm-dark-300 text-white w-full px-5 py-3 rounded-md h-[fit-content]">
       <FilterTab tabButton={taskTabButton} />
 
-      <p className="text-white mt-7 font-semibold">Upcoming Task</p>
-      <p className="text-white mt-7 text-[14px]">
-        This Week : <span className="ml-3 text-crm-gray-600">Apr 11 - Apr 17</span>
-      </p>
+      <div className="flex flex-col md:flex-row gap-2 justify-between  md:items-center py-5">
+        <p className="text-white  font-semibold">Upcoming Task</p>
+
+        <div className="relative">
+          <Button onClick={() => setOpenDateFilter(!openDateFilter)} variant="gray" className="flex items-center" paddingClassName="px-5 py-3">
+            {moment(dateFilter.start).format("DD MMMM, YYYY")} - {moment(dateFilter.end).format("DD MMMM, YYYY")}
+            <ArrowDownOutlinedIcon fill="#fff" className="ml-2" />
+          </Button>
+          {openDateFilter && (
+            <div className="absolute">
+              <DateRangePicker
+                singleDateRange
+                className="bg-white"
+                value={dateFilter}
+                onSelect={(val: any) => {
+                  setDateFilter(val);
+                  setOpenDateFilter(false);
+                }}
+              />
+            </div>
+          )}
+        </div>
+      </div>
       <div className="statistic-summary flex mt-4 mb-8 flex-wrap gap-y-5">
         <span className="flex pr-5 border-r border-[#616161]">
           <h4 className="text-white font-semibold text-[30px]">12</h4>
